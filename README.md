@@ -50,7 +50,7 @@
 | **App 截图** | 占位卡片 | 将真实截图放入 `assets/images/`，并更新各 HTML 中的截图区域 |
 | **支持邮箱** | `support@example.com` | 替换为真实的反馈邮箱地址（出现在 `support.html` 和 `privacy.html`） |
 | **自定义域名** | 无 | 如配置自定义域名，需更新所有 `canonical`、`sitemap.xml`、`robots.txt` 中的 URL |
-| **版权年份** | 2024 | 每年更新页脚版权年份 |
+| **版权年份** | 2026 | 每年更新页脚版权年份 |
 
 ## 📱 App 信息
 
