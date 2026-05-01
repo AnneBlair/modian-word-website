@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>墨典单词 - 极简高效的艾宾浩斯背单词 App | iOS &amp; iPadOS</title>
+  <meta name="description" content="墨典单词是一款专注、纯粹、高效的英语背单词 App，支持艾宾浩斯复习节奏、本地英语词典、考试词库、自定义备注、例句辅助和图片英文识别，适合 iPhone 与 iPad 用户长期学习英语词汇。">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://anneblair.github.io/modian-word-website/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="墨典单词 - 极简高效的艾宾浩斯背单词 App">
+  <meta property="og:description" content="专注、纯粹、高效的英语背单词 App。艾宾浩斯复习节奏、本地英语词典、多考试词库，适合 iPhone 与 iPad 用户。">
+  <meta property="og:url" content="https://anneblair.github.io/modian-word-website/">
+  <meta property="og:site_name" content="墨典单词">
+  <meta property="og:locale" content="zh_CN">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="墨典单词 - 极简高效的艾宾浩斯背单词 App">
+  <meta name="twitter:description" content="专注、纯粹、高效的英语背单词 App。艾宾浩斯复习节奏、本地英语词典、多考试词库，适合 iPhone 与 iPad 用户。">
+
+  <!-- Favicon & Icons -->
+  <link rel="icon" type="image/png" href="./assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="./assets/images/apple-touch-icon.png">
+
+  <!-- Manifest -->
+  <link rel="manifest" href="./site.webmanifest">
+  <meta name="theme-color" content="#5b6af0">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="./assets/css/styles.css">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "墨典单词",
+    "alternateName": "墨典单词-高效学英语锁屏背单词的必备神器",
+    "description": "专注、纯粹、高效的英语背单词 App。无广告，按照艾宾浩斯遗忘规律安排复习，覆盖四六级、考研、托福、雅思、GRE 等考试词库，支持本地英语词典和图片英文识别。",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "iOS, iPadOS",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "CNY",
+      "availability": "https://schema.org/InStock",
+      "url": "https://apps.apple.com/cn/app/%E5%A2%A8%E5%85%B8%E5%8D%95%E8%AF%8D-%E9%AB%98%E6%95%88%E5%AD%A6%E8%8B%B1%E8%AF%AD%E9%94%81%E5%B1%8F%E8%83%8C%E5%8D%95%E8%AF%8D%E7%9A%84%E5%BF%85%E5%A4%87%E7%A5%9E%E5%99%A8/id1373544809"
+    },
+    "url": "https://anneblair.github.io/modian-word-website/",
+    "sameAs": [
+      "https://apps.apple.com/cn/app/%E5%A2%A8%E5%85%B8%E5%8D%95%E8%AF%8D-%E9%AB%98%E6%95%88%E5%AD%A6%E8%8B%B1%E8%AF%AD%E9%94%81%E5%B1%8F%E8%83%8C%E5%8D%95%E8%AF%8D%E7%9A%84%E5%BF%85%E5%A4%87%E7%A5%9E%E5%99%A8/id1373544809"
+    ],
+    "inLanguage": "zh-CN",
+    "publisher": {
+      "@type": "Organization",
+      "name": "墨典单词"
+    }
+  }
+  </script>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="site-nav" role="navigation" aria-label="主导航">
+    <div class="nav-inner">
+      <a href="./" class="nav-logo" aria-label="墨典单词首页">
+        <span>墨典单词</span>
+      </a>
+      <button
+        id="nav-menu-btn"
+        class="nav-menu-btn"
+        aria-controls="nav-links"
+        aria-expanded="false"
+        aria-label="打开菜单"
+      >
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+      <ul id="nav-links" class="nav-links" role="list">
+        <li><a href="#features">核心功能</a></li>
+        <li><a href="#flow">学习流程</a></li>
+        <li><a href="./faq.html">FAQ</a></li>
+        <li><a href="./support.html">支持</a></li>
+        <li>
+          <a
+            href="https://apps.apple.com/cn/app/%E5%A2%A8%E5%85%B8%E5%8D%95%E8%AF%8D-%E9%AB%98%E6%95%88%E5%AD%A6%E8%8B%B1%E8%AF%AD%E9%94%81%E5%B1%8F%E8%83%8C%E5%8D%95%E8%AF%8D%E7%9A%84%E5%BF%85%E5%A4%87%E7%A5%9E%E5%99%A8/id1373544809"
+            class="nav-cta"
+            target="_blank"
+            rel="noopener noreferrer"
+          >App Store 下载</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container">
+      <div class="hero-badge">iOS &amp; iPadOS · 无广告 · 专注背单词</div>
+      <h1 id="hero-title" class="hero-title">墨典单词</h1>
+      <p class="hero-subtitle">高效学英语，按艾宾浩斯节奏背单词</p>
+      <p class="hero-desc">专注、纯粹、高效。没有多余功能，没有广告打扰，只有帮你真正记住单词的科学方法。</p>
+      <div class="hero-actions">
+        <a
+          href="https://apps.apple.com/cn/app/%E5%A2%A8%E5%85%B8%E5%8D%95%E8%AF%8D-%E9%AB%98%E6%95%88%E5%AD%A6%E8%8B%B1%E8%AF%AD%E9%94%81%E5%B1%8F%E8%83%8C%E5%8D%95%E8%AF%8D%E7%9A%84%E5%BF%85%E5%A4%87%E7%A5%9E%E5%99%A8/id1373544809"
+          class="btn-download"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="在 App Store 下载墨典单词"
+        >
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+          </svg>
+          App Store 下载
+        </a>
+      </div>
+      <p class="hero-meta" style="margin-top: 20px;">支持 iPhone · iPad · 免费下载</p>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="section features" id="features" aria-labelledby="features-title">
+    <div class="container">
+      <h2 id="features-title" class="section-title">核心功能</h2>
+      <p class="section-subtitle">每一个功能，都只为让你更高效地记住单词</p>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon" aria-hidden="true">🧠</div>
+          <h3 class="feature-title">艾宾浩斯复习</h3>
+          <p class="feature-desc">根据遗忘规律自动安排最佳复习时间节点，让单词在适当时刻重现，高效巩固记忆。</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" aria-hidden="true">🎯</div>
+          <h3 class="feature-title">目标与计划闭环</h3>
+          <p class="feature-desc">选择目标词库，设立学习计划，执行每日任务，完成复习任务——完整的学习闭环帮你持续进步。</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" aria-hidden="true">📖</div>
+          <h3 class="feature-title">本地英语词典</h3>
+          <p class="feature-desc">内置本地英语词典，无需联网即可查词，随时随地都能深度了解单词的含义与用法。</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" aria-hidden="true">📚</div>
+          <h3 class="feature-title">多考试词库覆盖</h3>
+          <p class="feature-desc">涵盖四级、六级、考研、托福、雅思、GRE、程序员词汇、中考、高考等多种核心词库，满足不同学习目标。</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" aria-hidden="true">📷</div>
+          <h3 class="feature-title">图片英文识别</h3>
+          <p class="feature-desc">支持拍照识别图片中的英文文字，自动分词拆解，将陌生词汇快速归纳为生词本。</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" aria-hidden="true">✏️</div>
+          <h3 class="feature-title">自定义备注与例句</h3>
+          <p class="feature-desc">支持为单词添加个人备注，查看更多例句辅助理解，打造属于你自己的个性化词库笔记。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Learning Flow -->
+  <section class="section flow" id="flow" aria-labelledby="flow-title">
+    <div class="container">
+      <h2 id="flow-title" class="section-title">学习流程</h2>
+      <p class="section-subtitle">四步完整学习路径，简单高效</p>
+      <div class="flow-steps">
+        <div class="flow-step">
+          <div class="flow-number" aria-hidden="true">1</div>
+          <h3 class="flow-title">选择目标</h3>
+          <p class="flow-desc">从多种考试词库中选择你的学习目标</p>
+        </div>
+        <div class="flow-step">
+          <div class="flow-number" aria-hidden="true">2</div>
+          <h3 class="flow-title">设立计划</h3>
+          <p class="flow-desc">根据时间安排制定每日学习计划</p>
+        </div>
+        <div class="flow-step">
+          <div class="flow-number" aria-hidden="true">3</div>
+          <h3 class="flow-title">执行任务</h3>
+          <p class="flow-desc">每天完成新单词学习任务</p>
+        </div>
+        <div class="flow-step">
+          <div class="flow-number" aria-hidden="true">4</div>
+          <h3 class="flow-title">复习任务</h3>
+          <p class="flow-desc">按艾宾浩斯节奏完成复习，巩固记忆</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Audience -->
+  <section class="section audience" id="audience" aria-labelledby="audience-title">
+    <div class="container">
+      <h2 id="audience-title" class="section-title">适合哪些人</h2>
+      <p class="section-subtitle">不同学习目标，同一款高效工具</p>
+      <div class="audience-grid">
+        <span class="audience-tag">📝 备考四六级</span>
+        <span class="audience-tag">🎓 考研英语</span>
+        <span class="audience-tag">🌍 托福 / 雅思</span>
+        <span class="audience-tag">🔬 GRE 备考</span>
+        <span class="audience-tag">📱 中考 / 高考</span>
+        <span class="audience-tag">💻 程序员英语</span>
+        <span class="audience-tag">📅 日常英语积累</span>
+        <span class="audience-tag">📖 长期坚持学习者</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Screenshots -->
+  <section class="section screenshots" id="screenshots" aria-labelledby="screenshots-title">
+    <div class="container">
+      <h2 id="screenshots-title" class="section-title">App 截图</h2>
+      <p class="section-subtitle">简洁的界面，专注于背单词本身</p>
+      <div class="screenshots-grid" aria-label="App 界面截图展示">
+        <div class="screenshot-placeholder" role="img" aria-label="App Screenshot Placeholder 1">
+          <span class="screenshot-placeholder-icon" aria-hidden="true">📱</span>
+          <span>App Screenshot<br>Placeholder</span>
+        </div>
+        <div class="screenshot-placeholder" role="img" aria-label="App Screenshot Placeholder 2">
+          <span class="screenshot-placeholder-icon" aria-hidden="true">📱</span>
+          <span>App Screenshot<br>Placeholder</span>
+        </div>
+        <div class="screenshot-placeholder" role="img" aria-label="App Screenshot Placeholder 3">
+          <span class="screenshot-placeholder-icon" aria-hidden="true">📱</span>
+          <span>App Screenshot<br>Placeholder</span>
+        </div>
+        <div class="screenshot-placeholder" role="img" aria-label="App Screenshot Placeholder 4">
+          <span class="screenshot-placeholder-icon" aria-hidden="true">📱</span>
+          <span>App Screenshot<br>Placeholder</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section" aria-labelledby="cta-title">
+    <div class="container">
+      <h2 id="cta-title" class="cta-title">开始你的单词学习之旅</h2>
+      <p class="cta-desc">专注背单词，没有广告，没有干扰。现在就下载，按艾宾浩斯节奏高效记忆英语单词。</p>
+      <a
+        href="https://apps.apple.com/cn/app/%E5%A2%A8%E5%85%B8%E5%8D%95%E8%AF%8D-%E9%AB%98%E6%95%88%E5%AD%A6%E8%8B%B1%E8%AF%AD%E9%94%81%E5%B1%8F%E8%83%8C%E5%8D%95%E8%AF%8D%E7%9A%84%E5%BF%85%E5%A4%87%E7%A5%9E%E5%99%A8/id1373544809"
+        class="btn-download"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="在 App Store 下载墨典单词"
+        style="display:inline-flex;"
+      >
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+        </svg>
+        在 App Store 下载
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-brand-name">墨典单词</div>
+          <p class="footer-brand-desc">极简高效的英语背单词 App，按艾宾浩斯遗忘规律科学记忆，专注、纯粹、无广告。</p>
+        </div>
+        <div class="footer-links-group">
+          <div class="footer-links-title">页面</div>
+          <ul class="footer-links-list" role="list">
+            <li><a href="./faq.html">常见问题</a></li>
+            <li><a href="./support.html">用户支持</a></li>
+            <li><a href="./privacy.html">隐私政策</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-group">
+          <div class="footer-links-title">下载</div>
+          <ul class="footer-links-list" role="list">
+            <li>
+              <a
+                href="https://apps.apple.com/cn/app/%E5%A2%A8%E5%85%B8%E5%8D%95%E8%AF%8D-%E9%AB%98%E6%95%88%E5%AD%A6%E8%8B%B1%E8%AF%AD%E9%94%81%E5%B1%8F%E8%83%8C%E5%8D%95%E8%AF%8D%E7%9A%84%E5%BF%85%E5%A4%87%E7%A5%9E%E5%99%A8/id1373544809"
+                target="_blank"
+                rel="noopener noreferrer"
+              >App Store</a>
+            </li>
+            <li><a href="./support.html">联系我们</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copyright">&copy; 2024 墨典单词. All rights reserved.</p>
+        <div style="display:flex;gap:16px;font-size:0.85rem;">
+          <a href="./privacy.html" style="color:var(--color-text-light);">Privacy</a>
+          <a href="./support.html" style="color:var(--color-text-light);">Support</a>
+          <a href="./faq.html" style="color:var(--color-text-light);">FAQ</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./assets/js/main.js"></script>
+</body>
+</html>
