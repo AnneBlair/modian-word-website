@@ -845,6 +845,21 @@ h1, h2, h3, h4 {
   color: var(--color-text-light);
 }
 
+.footer-icp {
+  font-size: 0.78rem;
+  color: var(--color-text-light);
+  margin-top: 4px;
+}
+
+.footer-icp a {
+  color: var(--color-text-light);
+  transition: color var(--transition);
+}
+
+.footer-icp a:hover {
+  color: var(--color-primary);
+}
+
 /* ---------- Page Header (inner pages) ---------- */
 .page-header {
   background: var(--gradient-hero);
