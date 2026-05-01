@@ -46,9 +46,9 @@
 
 | 内容 | 当前状态 | 说明 |
 |------|----------|------|
-| **App 图标** | 占位 | 将 `favicon.png`、`apple-touch-icon.png`、`icon-192.png`、`icon-512.png` 放入 `assets/images/` |
-| **App 截图** | 占位卡片 | 将真实截图放入 `assets/images/`，并更新各 HTML 中的截图区域 |
-| **支持邮箱** | `support@example.com` | 替换为真实的反馈邮箱地址（出现在 `support.html` 和 `privacy.html`） |
+| **App 图标** | ✅ 已生成 | 品牌色渐变图标，如有真实图标可替换 `assets/images/` 中的文件 |
+| **App 截图** | ✅ 已内置 | 5张界面截图展示核心功能，如有真实截图可替换 `assets/images/screenshot-*.png` |
+| **支持邮箱** | ✅ `sirbliar@gmail.com` | 已配置真实邮箱 |
 | **自定义域名** | 无 | 如配置自定义域名，需更新所有 `canonical`、`sitemap.xml`、`robots.txt` 中的 URL |
 | **版权年份** | 2026 | 每年更新页脚版权年份 |
 

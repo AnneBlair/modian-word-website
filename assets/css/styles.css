@@ -482,10 +482,40 @@ ul, ol {
 
 .screenshots-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
   gap: 20px;
 }
 
+/* Screenshot frame with phone-like appearance */
+.screenshot-frame {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.screenshot-frame img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  display: block;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.screenshot-frame img:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 24px 64px rgba(91, 106, 240, 0.2);
+}
+
+.screenshot-caption {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  text-align: center;
+  font-weight: 500;
+}
+
+/* Keep old placeholder style for reference (not used) */
 .screenshot-placeholder {
   aspect-ratio: 9/19.5;
   background: var(--color-bg-card);
