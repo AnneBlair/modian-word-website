@@ -78,7 +78,7 @@
     );
 
     document
-      .querySelectorAll(".feature-card, .flow-step, .audience-tag, .faq-item")
+      .querySelectorAll(".feature-card, .flow-step, .audience-tag, .faq-item, .screenshot-frame, .section-title")
       .forEach(function (el) {
         el.classList.add("observe-fade");
         observer.observe(el);

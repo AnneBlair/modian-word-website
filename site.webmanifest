@@ -4,8 +4,8 @@
   "description": "极简高效的艾宾浩斯背单词 App，支持 iPhone 与 iPad",
   "start_url": "./",
   "display": "browser",
-  "background_color": "#f8f9ff",
-  "theme_color": "#5b6af0",
+  "background_color": "#F4F5F9",
+  "theme_color": "#64729C",
   "icons": [
     {
       "src": "./assets/images/icon-192.png",
