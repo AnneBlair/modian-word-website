@@ -60,8 +60,9 @@
 
 ## 🛠️ 技术说明
 
-- **技术栈**：纯 HTML5 + CSS3 + 原生 JS（无框架，无构建工具）
-- **设计**：移动端优先，卡片式布局，柔和渐变背景
-- **深色模式**：通过 `prefers-color-scheme` CSS 媒体查询自动适配
+- **技术栈**：纯 HTML5 + CSS3 + 原生 JS（无框架，无构建工具，零外部依赖）
+- **设计语言**：「墨 · 记忆的科学」——文人衬线中文标题 × 等宽数据字，暖纸/墨夜双色板；招牌视觉是一条交互式艾宾浩斯遗忘曲线
+- **动效**：曲线绘制、数字滚动、复习开关、磁性按钮、光标聚光、滚动揭示与进度条；全部遵循 `prefers-reduced-motion`
+- **深色模式**：`data-theme` 属性 + 导航栏一键切换，记忆到 `localStorage`，并回退到系统 `prefers-color-scheme`（含防闪烁内联脚本）
 - **SEO**：每页包含 `canonical`、Open Graph、Twitter Card；首页包含 `MobileApplication` JSON-LD 结构化数据
-- **可访问性**：使用语义化 HTML，ARIA 属性，`:focus-visible` 样式
+- **可访问性**：语义化 HTML、ARIA 属性、跳转链接、`:focus-visible` 样式

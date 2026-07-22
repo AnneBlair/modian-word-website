@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-theme="light">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>墨典单词 - 极简高效的艾宾浩斯背单词 App | iOS &amp; iPadOS</title>
-  <meta name="description" content="墨典单词是一款专注、纯粹、高效的英语背单词 App，支持艾宾浩斯复习节奏、本地英语词典、考试词库、自定义备注、例句辅助和图片英文识别，适合 iPhone 与 iPad 用户长期学习英语词汇。">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>墨典单词 - 依艾宾浩斯遗忘曲线，在你忘记之前复习 | iPhone &amp; iPad</title>
+  <meta name="description" content="墨典单词是一款依据艾宾浩斯遗忘曲线的极简背单词 App。在你即将遗忘的那一刻自动安排复习——不复习只记得 5 个，坚持复习记得 18 个。无广告、可离线、本地词典，覆盖四六级、考研、托福、雅思、GRE 等词库，iPhone 与 iPad 通用。">
   <meta name="robots" content="index, follow">
+  <meta name="color-scheme" content="light dark">
   <link rel="canonical" href="https://anneblair.github.io/modian-word-website/">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="墨典单词 - 极简高效的艾宾浩斯背单词 App">
-  <meta property="og:description" content="专注、纯粹、高效的英语背单词 App。艾宾浩斯复习节奏、本地英语词典、多考试词库，适合 iPhone 与 iPad 用户。">
+  <meta property="og:title" content="墨典单词 - 依艾宾浩斯遗忘曲线，在你忘记之前复习">
+  <meta property="og:description" content="在你即将遗忘的那一刻自动安排复习。不复习只记得 5 个，坚持复习记得 18 个。无广告、可离线、覆盖四六级到 GRE。">
   <meta property="og:url" content="https://anneblair.github.io/modian-word-website/">
   <meta property="og:site_name" content="墨典单词">
   <meta property="og:locale" content="zh_CN">
@@ -22,8 +23,8 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="墨典单词 - 极简高效的艾宾浩斯背单词 App">
-  <meta name="twitter:description" content="专注、纯粹、高效的英语背单词 App。艾宾浩斯复习节奏、本地英语词典、多考试词库，适合 iPhone 与 iPad 用户。">
+  <meta name="twitter:title" content="墨典单词 - 在你忘记之前复习">
+  <meta name="twitter:description" content="依据艾宾浩斯遗忘曲线的极简背单词 App。无广告、可离线、覆盖四六级到 GRE。">
   <meta name="twitter:image" content="https://anneblair.github.io/modian-word-website/assets/images/screenshot-02.jpg">
   <meta name="twitter:image:alt" content="墨典单词 App 截图 - 艾宾浩斯高效背单词">
 
@@ -33,7 +34,19 @@
 
   <!-- Manifest -->
   <link rel="manifest" href="./site.webmanifest">
-  <meta name="theme-color" content="#64729C">
+  <meta name="theme-color" content="#0C0E15" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#F5F4F0" media="(prefers-color-scheme: light)">
+
+  <!-- Prevent theme flash -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("modian-theme");
+        if (!t) t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="./assets/css/styles.css">
@@ -45,12 +58,12 @@
     "@type": "MobileApplication",
     "name": "墨典单词",
     "alternateName": "墨典单词-高效学英语锁屏背单词的必备神器",
-    "description": "专注、纯粹、高效的英语背单词 App。无广告，按照艾宾浩斯遗忘规律安排复习，覆盖四六级、考研、托福、雅思、GRE 等考试词库，支持本地英语词典和图片英文识别。",
+    "description": "依据艾宾浩斯遗忘曲线的极简背单词 App。无广告，在最佳时机自动安排复习，覆盖四六级、考研、托福、雅思、GRE 等考试词库，支持本地英语词典与图片英文识别。",
     "applicationCategory": "EducationalApplication",
     "operatingSystem": "iOS, iPadOS",
     "offers": {
       "@type": "Offer",
-      "price": "0",
+      "price": "30",
       "priceCurrency": "CNY",
       "availability": "https://schema.org/InStock",
       "url": "https://apps.apple.com/cn/app/%E5%A2%A8%E5%85%B8%E5%8D%95%E8%AF%8D-%E9%AB%98%E6%95%88%E5%AD%A6%E8%8B%B1%E8%AF%AD%E9%94%81%E5%B1%8F%E8%83%8C%E5%8D%95%E8%AF%8D%E7%9A%84%E5%BF%85%E5%A4%87%E7%A5%9E%E5%99%A8/id1373544809"
@@ -68,10 +81,21 @@
   </script>
 </head>
 <body>
+  <a href="#main" class="skip-link">跳到主要内容</a>
+
+  <!-- Scroll progress -->
+  <div class="scroll-progress" aria-hidden="true"><span id="scroll-progress-bar"></span></div>
+
   <!-- Navigation -->
-  <nav class="site-nav" role="navigation" aria-label="主导航">
+  <nav class="site-nav" id="site-nav" role="navigation" aria-label="主导航">
     <div class="nav-inner">
       <a href="./" class="nav-logo" aria-label="墨典单词首页">
+        <svg class="nav-logo-mark" width="26" height="26" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <path d="M25 6c-6 1.5-11 6-14 12.5C10 21 9 24 8.5 26.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          <path d="M25 6c-1 6-4.5 10.5-9.5 13.2-1.6.9-3.3 1.4-5 1.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          <path d="M25 6c.6 3-.2 5.8-2 8.2M25 6c-2.7 1-4.9 2.8-6.6 5.2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.6"/>
+          <path d="M7 27h11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
         <span>墨典单词</span>
       </a>
       <button
@@ -81,274 +105,490 @@
         aria-expanded="false"
         aria-label="打开菜单"
       >
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <line x1="3" y1="6" x2="21" y2="6"/>
-          <line x1="3" y1="12" x2="21" y2="12"/>
-          <line x1="3" y1="18" x2="21" y2="18"/>
-        </svg>
+        <span></span><span></span><span></span>
       </button>
       <ul id="nav-links" class="nav-links" role="list">
+        <li><a href="#science">记忆科学</a></li>
         <li><a href="#features">核心功能</a></li>
         <li><a href="#flow">学习流程</a></li>
+        <li><a href="#library">词库</a></li>
         <li><a href="./faq.html">FAQ</a></li>
-        <li><a href="./support.html">支持</a></li>
-        <li>
+        <li class="nav-tools">
+          <button id="theme-toggle" class="theme-toggle" type="button" aria-label="切换深色/浅色模式" title="切换主题">
+            <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+            <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          </button>
           <a
             href="https://apps.apple.com/cn/app/%E5%A2%A8%E5%85%B8%E5%8D%95%E8%AF%8D-%E9%AB%98%E6%95%88%E5%AD%A6%E8%8B%B1%E8%AF%AD%E9%94%81%E5%B1%8F%E8%83%8C%E5%8D%95%E8%AF%8D%E7%9A%84%E5%BF%85%E5%A4%87%E7%A5%9E%E5%99%A8/id1373544809"
             class="nav-cta"
             target="_blank"
             rel="noopener noreferrer"
-          >App Store 下载</a>
+          >下载</a>
         </li>
       </ul>
     </div>
   </nav>
 
+  <main id="main">
   <!-- Hero -->
   <section class="hero" aria-labelledby="hero-title">
-    <div class="hero-orb" aria-hidden="true"></div>
-    <div class="container">
-      <div class="hero-badge">iOS &amp; iPadOS · 无广告 · 专注背单词</div>
-      <h1 id="hero-title" class="hero-title">墨典单词</h1>
-      <p class="hero-subtitle">高效学英语，按艾宾浩斯节奏背单词</p>
-      <p class="hero-desc">专注、纯粹、高效。没有多余功能，没有广告打扰，只有帮你真正记住单词的科学方法。</p>
-      <div class="hero-actions">
-        <a
-          href="https://apps.apple.com/cn/app/%E5%A2%A8%E5%85%B8%E5%8D%95%E8%AF%8D-%E9%AB%98%E6%95%88%E5%AD%A6%E8%8B%B1%E8%AF%AD%E9%94%81%E5%B1%8F%E8%83%8C%E5%8D%95%E8%AF%8D%E7%9A%84%E5%BF%85%E5%A4%87%E7%A5%9E%E5%99%A8/id1373544809"
-          class="btn-download"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="在 App Store 下载墨典单词"
-        >
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
-          </svg>
-          App Store 下载
-        </a>
+    <div class="hero-grain" aria-hidden="true"></div>
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-dot"></span>MEMORY&nbsp;SCIENCE · 记忆科学驱动</p>
+        <h1 id="hero-title" class="hero-title">
+          让每个单词，<br>都记在<span class="ink-underline">遗忘之前</span>。
+        </h1>
+        <p class="hero-desc">
+          墨典单词依据<strong>艾宾浩斯遗忘曲线</strong>，在你即将忘记的那一刻安排复习。
+          不复习只记得 5 个，坚持复习记得 18 个——把力气花在对的时刻。
+        </p>
+        <div class="hero-actions">
+          <a
+            href="https://apps.apple.com/cn/app/%E5%A2%A8%E5%85%B8%E5%8D%95%E8%AF%8D-%E9%AB%98%E6%95%88%E5%AD%A6%E8%8B%B1%E8%AF%AD%E9%94%81%E5%B1%8F%E8%83%8C%E5%8D%95%E8%AF%8D%E7%9A%84%E5%BF%85%E5%A4%87%E7%A5%9E%E5%99%A8/id1373544809"
+            class="btn btn-primary btn-magnetic"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="在 App Store 下载墨典单词"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+            </svg>
+            App Store 下载
+          </a>
+          <a href="#science" class="btn btn-ghost">看看记忆科学 ↓</a>
+        </div>
+        <p class="buy-note">付费 App · <b>¥30</b> <span>不定期有优惠，以 App Store 为准</span></p>
+        <ul class="hero-trust" role="list">
+          <li><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>无广告 · 无打扰</li>
+          <li><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>核心功能可离线</li>
+          <li><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>iPhone · iPad 通用</li>
+        </ul>
       </div>
-      <p class="hero-meta" style="margin-top: 20px;">支持 iPhone · iPad · 免费下载</p>
+
+      <!-- Interactive forgetting-curve viz -->
+      <div class="hero-viz" aria-hidden="true">
+        <figure class="curve-card" id="curve-card">
+          <figcaption class="curve-card-head">
+            <span class="curve-tag">艾宾浩斯遗忘曲线</span>
+            <span class="curve-legend">
+              <i class="dot dot-decay"></i>不复习
+              <i class="dot dot-retain"></i>坚持复习
+            </span>
+          </figcaption>
+          <svg class="curve-svg" viewBox="0 0 520 300" preserveAspectRatio="none" role="img" aria-label="遗忘曲线对比图">
+            <defs>
+              <linearGradient id="decayFill" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="var(--decay)" stop-opacity="0.28"/>
+                <stop offset="100%" stop-color="var(--decay)" stop-opacity="0"/>
+              </linearGradient>
+              <linearGradient id="retainFill" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="var(--retain)" stop-opacity="0.30"/>
+                <stop offset="100%" stop-color="var(--retain)" stop-opacity="0"/>
+              </linearGradient>
+              <linearGradient id="retainStroke" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="var(--retain)"/>
+                <stop offset="100%" stop-color="var(--accent-gold)"/>
+              </linearGradient>
+            </defs>
+            <!-- grid -->
+            <g class="curve-grid">
+              <line x1="40" y1="30" x2="40" y2="250"/>
+              <line x1="40" y1="250" x2="500" y2="250"/>
+              <line x1="40" y1="190" x2="500" y2="190"/>
+              <line x1="40" y1="130" x2="500" y2="130"/>
+              <line x1="40" y1="70" x2="500" y2="70"/>
+            </g>
+            <!-- decay area + line -->
+            <path class="curve-decay-fill" d="M40 45 C 120 150, 180 205, 260 225 S 420 244, 500 247 L500 250 L40 250 Z" fill="url(#decayFill)"/>
+            <path class="curve-decay" id="curve-decay" d="M40 45 C 120 150, 180 205, 260 225 S 420 244, 500 247" fill="none" stroke="var(--decay)" stroke-width="2.5" stroke-linecap="round"/>
+            <!-- retention area + sawtooth line -->
+            <path class="curve-retain-fill" d="M40 45 C 70 95, 90 120, 110 120 C 130 90, 150 70, 175 75 C 200 100, 210 108, 235 96 C 275 78, 300 70, 335 66 C 400 60, 440 58, 500 56 L500 250 L40 250 Z" fill="url(#retainFill)"/>
+            <path class="curve-retain" id="curve-retain" d="M40 45 C 70 95, 90 120, 110 120 C 130 90, 150 70, 175 75 C 200 100, 210 108, 235 96 C 275 78, 300 70, 335 66 C 400 60, 440 58, 500 56" fill="none" stroke="url(#retainStroke)" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- review markers -->
+            <g class="curve-marks">
+              <circle cx="110" cy="120" r="4"/>
+              <circle cx="175" cy="75" r="4"/>
+              <circle cx="235" cy="96" r="4"/>
+              <circle cx="335" cy="66" r="4"/>
+              <circle cx="500" cy="56" r="4"/>
+            </g>
+          </svg>
+          <div class="curve-axis"><span>Day 1</span><span>2</span><span>4</span><span>7</span><span>15</span></div>
+          <div class="curve-callout">
+            <div class="callout-num"><span data-count-to="18" data-count-suffix="">0</span><em>坚持复习记得</em></div>
+            <div class="callout-sep">vs</div>
+            <div class="callout-num muted"><span data-count-to="5">0</span><em>不复习只记得</em></div>
+          </div>
+        </figure>
+        <div class="hero-viz-badges" aria-hidden="true">
+          <span class="viz-badge viz-badge-1"><i class="dot dot-retain"></i>Day 7 · 已巩固</span>
+          <span class="viz-badge viz-badge-2">记忆留存 <b>↑ 360%</b></span>
+        </div>
+      </div>
+    </div>
+    <a href="#stats" class="scroll-hint" aria-hidden="true"><span></span></a>
+  </section>
+
+  <!-- Stats strip -->
+  <section class="stats-strip" id="stats" aria-label="核心数据">
+    <div class="container stats-grid">
+      <div class="stat">
+        <div class="stat-num"><span data-count-to="9" data-count-suffix="+">0</span></div>
+        <div class="stat-label">核心考试词库</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num"><span data-count-to="360">0</span><small>%</small></div>
+        <div class="stat-label">复习后记忆留存提升</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num"><span data-count-to="0">0</span></div>
+        <div class="stat-label">广告 · 弹窗 · 打扰</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num"><span data-count-to="2">0</span></div>
+        <div class="stat-label">端 iCloud 无缝同步</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Science / signature section -->
+  <section class="section science" id="science" aria-labelledby="science-title">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow"><span class="eyebrow-dot"></span>THE&nbsp;SCIENCE · 遗忘的真相</p>
+        <h2 id="science-title" class="section-title">你不是记性差，<br>你只是复习得太晚。</h2>
+        <p class="section-lead">1885 年，心理学家赫尔曼·艾宾浩斯发现：学过的内容会在数小时内急速流失。真正的关键不是学得多，而是<strong>在遗忘发生的那一刻，恰好复习</strong>。</p>
+      </div>
+
+      <div class="science-lab">
+        <div class="lab-canvas">
+          <div class="lab-controls" role="group" aria-label="复习开关">
+            <button type="button" class="lab-toggle is-active" id="lab-toggle" aria-pressed="true">
+              <span class="lab-toggle-track"><span class="lab-toggle-thumb"></span></span>
+              <span class="lab-toggle-text">复习节奏：<b>开启</b></span>
+            </button>
+          </div>
+          <svg class="lab-svg" viewBox="0 0 720 340" role="img" aria-label="开启复习后记忆留存显著提升的对比曲线">
+            <defs>
+              <linearGradient id="labRetainFill" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="var(--retain)" stop-opacity="0.28"/>
+                <stop offset="100%" stop-color="var(--retain)" stop-opacity="0"/>
+              </linearGradient>
+              <linearGradient id="labDecayFill" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="var(--decay)" stop-opacity="0.22"/>
+                <stop offset="100%" stop-color="var(--decay)" stop-opacity="0"/>
+              </linearGradient>
+              <linearGradient id="labRetainStroke" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="var(--retain)"/>
+                <stop offset="100%" stop-color="var(--accent-gold)"/>
+              </linearGradient>
+            </defs>
+            <g class="lab-grid">
+              <line x1="56" y1="40" x2="56" y2="288"/>
+              <line x1="56" y1="288" x2="690" y2="288"/>
+              <line x1="56" y1="226" x2="690" y2="226"/>
+              <line x1="56" y1="164" x2="690" y2="164"/>
+              <line x1="56" y1="102" x2="690" y2="102"/>
+            </g>
+            <text class="lab-axis-y" x="16" y="46">100%</text>
+            <text class="lab-axis-y" x="24" y="292">0</text>
+            <path class="lab-decay-fill" d="M56 52 C150 190, 230 250, 360 268 S560 285, 690 287 L690 288 L56 288 Z" fill="url(#labDecayFill)"/>
+            <path class="lab-decay" id="lab-decay" d="M56 52 C150 190, 230 250, 360 268 S560 285, 690 287" fill="none" stroke="var(--decay)" stroke-width="3" stroke-linecap="round" stroke-dasharray="2 7"/>
+            <path class="lab-retain-fill" id="lab-retain-fill" d="M56 52 C96 120, 120 150, 150 150 C180 108, 205 80, 240 86 C285 118, 300 128, 340 112 C420 84, 460 78, 690 66 L690 288 L56 288 Z" fill="url(#labRetainFill)"/>
+            <path class="lab-retain" id="lab-retain" d="M56 52 C96 120, 120 150, 150 150 C180 108, 205 80, 240 86 C285 118, 300 128, 340 112 C420 84, 460 78, 690 66" fill="none" stroke="url(#labRetainStroke)" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+            <g class="lab-marks" id="lab-marks">
+              <g><circle cx="150" cy="150" r="5"/><text x="150" y="176">1天</text></g>
+              <g><circle cx="240" cy="86" r="5"/><text x="240" y="112">2天</text></g>
+              <g><circle cx="340" cy="112" r="5"/><text x="340" y="138">4天</text></g>
+              <g><circle cx="480" cy="76" r="5"/><text x="480" y="102">7天</text></g>
+              <g><circle cx="690" cy="66" r="5"/><text x="668" y="92">15天</text></g>
+            </g>
+          </svg>
+        </div>
+        <div class="lab-notes">
+          <div class="lab-note">
+            <span class="lab-note-k">01</span>
+            <h3>遗忘是默认设置</h3>
+            <p>新学的单词 20 分钟后就开始溜走，一天后可能只剩三成。死记硬背，是在和大脑的天性对抗。</p>
+          </div>
+          <div class="lab-note">
+            <span class="lab-note-k">02</span>
+            <h3>复习要卡在临界点</h3>
+            <p>墨典把复习安排在记忆即将消退的第 1、2、4、7、15 天——每一次唤醒，都让曲线抬得更高、掉得更慢。</p>
+          </div>
+          <div class="lab-note lab-note-highlight">
+            <span class="lab-note-k">03</span>
+            <h3>同样的时间，记住 3.6 倍</h3>
+            <p>App 内实测：一组 18 个单词，不复习只留下 5 个；跟着墨典的节奏走，18 个全都记住。</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Features -->
   <section class="section features" id="features" aria-labelledby="features-title">
     <div class="container">
-      <h2 id="features-title" class="section-title">核心功能</h2>
-      <p class="section-subtitle">每一个功能，都只为让你更高效地记住单词</p>
+      <div class="section-head">
+        <p class="eyebrow"><span class="eyebrow-dot"></span>FEATURES · 核心功能</p>
+        <h2 id="features-title" class="section-title">克制，是为了让你更专注</h2>
+        <p class="section-lead">每一个功能都只为一件事——让你真正记住单词。没有社交，没有信息流，没有让你分心的一切。</p>
+      </div>
       <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon" aria-hidden="true">🧠</div>
-          <h3 class="feature-title">艾宾浩斯复习</h3>
-          <p class="feature-desc">根据遗忘规律自动安排最佳复习时间节点，让单词在适当时刻重现，高效巩固记忆。</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon" aria-hidden="true">🎯</div>
-          <h3 class="feature-title">目标与计划闭环</h3>
-          <p class="feature-desc">选择目标词库，设立学习计划，执行每日任务，完成复习任务——完整的学习闭环帮你持续进步。</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon" aria-hidden="true">📖</div>
+        <article class="feature-card feat-lg spotlight" tabindex="0">
+          <div class="feature-icon">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 24c4-1 6-4 8-9s4-8 8-9"/><path d="M4 24c6 .5 11-3 14-9"/><circle cx="9" cy="19" r="1.4" fill="currentColor" stroke="none"/><circle cx="15" cy="13" r="1.4" fill="currentColor" stroke="none"/><circle cx="22" cy="8" r="1.4" fill="currentColor" stroke="none"/><path d="M24 6l4 2-2 4"/></svg>
+          </div>
+          <h3 class="feature-title">艾宾浩斯智能复习</h3>
+          <p class="feature-desc">按遗忘规律自动排定第 1、2、4、7、15 天的复习节点，让单词在即将忘记时恰好重现。你只管学，什么时候复习交给算法。</p>
+          <div class="feature-tagrow"><span>自动排程</span><span>临界点唤醒</span><span>日历提醒</span></div>
+        </article>
+
+        <article class="feature-card spotlight" tabindex="0">
+          <div class="feature-icon">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="16" cy="16" r="11"/><circle cx="16" cy="16" r="6"/><circle cx="16" cy="16" r="1.6" fill="currentColor" stroke="none"/><path d="M16 5V2M16 30v-3M27 16h3M2 16h3"/></svg>
+          </div>
+          <h3 class="feature-title">目标 · 计划闭环</h3>
+          <p class="feature-desc">选词库、定计划、做任务、清复习——一条完整闭环，把"想学好"落成每天可执行的一小步。</p>
+        </article>
+
+        <article class="feature-card spotlight" tabindex="0">
+          <div class="feature-icon">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 5h9a3 3 0 0 1 3 3v18a3 3 0 0 0-3-3H6z"/><path d="M26 5h-8a3 3 0 0 0-3 3v18a3 3 0 0 1 3-3h8z"/></svg>
+          </div>
           <h3 class="feature-title">本地英语词典</h3>
-          <p class="feature-desc">内置本地英语词典，无需联网即可查词，随时随地都能深度了解单词的含义与用法。</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon" aria-hidden="true">📚</div>
+          <p class="feature-desc">内置离线词典，飞机上、地铁里、没信号也能查词，深入了解每个单词的释义与用法。</p>
+        </article>
+
+        <article class="feature-card spotlight" tabindex="0">
+          <div class="feature-icon">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 4l12 5-12 5L4 9l12-5z"/><path d="M4 16l12 5 12-5"/><path d="M4 23l12 5 12-5"/></svg>
+          </div>
           <h3 class="feature-title">多考试词库覆盖</h3>
-          <p class="feature-desc">涵盖四级、六级、考研、托福、雅思、GRE、程序员词汇、中考、高考等多种核心词库，满足不同学习目标。</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon" aria-hidden="true">📷</div>
+          <p class="feature-desc">四级、六级、考研、托福、雅思、GRE、程序员、中考、高考……总有一本正是你要考的。</p>
+        </article>
+
+        <article class="feature-card spotlight" tabindex="0">
+          <div class="feature-icon">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="8" width="24" height="18" rx="3"/><path d="M11 8l2-3h6l2 3"/><circle cx="16" cy="17" r="4.5"/><path d="M22 5.5h3"/></svg>
+          </div>
           <h3 class="feature-title">图片英文识别</h3>
-          <p class="feature-desc">支持拍照识别图片中的英文文字，自动分词拆解，将陌生词汇快速归纳为生词本。</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon" aria-hidden="true">✏️</div>
+          <p class="feature-desc">拍下书本、路牌、屏幕里的英文，自动分词拆解，一键把陌生词收进生词本。</p>
+        </article>
+
+        <article class="feature-card spotlight" tabindex="0">
+          <div class="feature-icon">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 4l6 6L12 26l-7 2 2-7z"/><path d="M19 7l6 6"/></svg>
+          </div>
           <h3 class="feature-title">自定义备注与例句</h3>
-          <p class="feature-desc">支持为单词添加个人备注，查看更多例句辅助理解，打造属于你自己的个性化词库笔记。</p>
+          <p class="feature-desc">为每个词写下你的联想与记忆锚点，调出更多例句辅助理解，攒出一本只属于你的词典。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Learning flow -->
+  <section class="section flow" id="flow" aria-labelledby="flow-title">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow"><span class="eyebrow-dot"></span>HOW&nbsp;IT&nbsp;WORKS · 学习流程</p>
+        <h2 id="flow-title" class="section-title">四步，走完一条学习闭环</h2>
+      </div>
+      <ol class="flow-track" role="list">
+        <li class="flow-step">
+          <span class="flow-index">01</span>
+          <h3 class="flow-step-title">选择目标</h3>
+          <p class="flow-step-desc">从多本考试词库里挑定你的主线目标。</p>
+        </li>
+        <li class="flow-step">
+          <span class="flow-index">02</span>
+          <h3 class="flow-step-title">设立计划</h3>
+          <p class="flow-step-desc">按你的时间，定下每天学多少的节奏。</p>
+        </li>
+        <li class="flow-step">
+          <span class="flow-index">03</span>
+          <h3 class="flow-step-title">执行任务</h3>
+          <p class="flow-step-desc">每天完成新词学习，一小步稳步推进。</p>
+        </li>
+        <li class="flow-step">
+          <span class="flow-index">04</span>
+          <h3 class="flow-step-title">按时复习</h3>
+          <p class="flow-step-desc">跟着艾宾浩斯节点清复习，把记忆钉牢。</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Screenshots showcase -->
+  <section class="section showcase" id="screenshots" aria-labelledby="showcase-title">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow"><span class="eyebrow-dot"></span>SCREENS · 界面一览</p>
+        <h2 id="showcase-title" class="section-title">干净的界面，替你把注意力省下来</h2>
+        <p class="section-lead">拖动浏览 · 每一屏都为背单词服务</p>
+      </div>
+    </div>
+    <div class="showcase-rail" id="showcase-rail" role="list" aria-label="App 界面截图">
+      <figure class="shot" role="listitem"><img src="./assets/images/screenshot-01.webp" alt="墨典单词 · 海量词汇资源，涵盖四六级、考研、托福等词库" loading="lazy" width="626" height="469"><figcaption>海量词库</figcaption></figure>
+      <figure class="shot" role="listitem"><img src="./assets/images/screenshot-07.jpg" alt="墨典单词 · 艾宾浩斯遗忘曲线，智能提醒最佳复习时机" loading="lazy" width="2732" height="2048"><figcaption>遗忘曲线复习</figcaption></figure>
+      <figure class="shot" role="listitem"><img src="./assets/images/screenshot-03.jpg" alt="墨典单词 · 多种记单词模式，灵活切换学习方式" loading="lazy" width="2732" height="2048"><figcaption>多种学习模式</figcaption></figure>
+      <figure class="shot" role="listitem"><img src="./assets/images/screenshot-05.jpg" alt="墨典单词 · 图片取词识别，机器学习识别图片中的英文" loading="lazy" width="2732" height="2048"><figcaption>图片取词</figcaption></figure>
+      <figure class="shot" role="listitem"><img src="./assets/images/screenshot-04.png" alt="墨典单词 · 护眼夜间模式，夜间舒适阅读" loading="lazy" width="5464" height="4096"><figcaption>护眼夜间模式</figcaption></figure>
+      <figure class="shot" role="listitem"><img src="./assets/images/screenshot-06.jpg" alt="墨典单词 · 阅读辅助，随时查词翻译与真人发音" loading="lazy" width="2732" height="2048"><figcaption>阅读辅助</figcaption></figure>
+      <figure class="shot" role="listitem"><img src="./assets/images/screenshot-08.jpg" alt="墨典单词 · iCloud 多端同步，iPhone 与 iPad 数据自动同步" loading="lazy" width="2732" height="2048"><figcaption>iCloud 同步</figcaption></figure>
+      <figure class="shot" role="listitem"><img src="./assets/images/screenshot-09.jpg" alt="墨典单词 · 多种记忆检测方式，测验、拼写、选择" loading="lazy" width="2732" height="2048"><figcaption>记忆检测</figcaption></figure>
+    </div>
+  </section>
+
+  <!-- Word library data grid -->
+  <section class="section library" id="library" aria-labelledby="library-title">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow"><span class="eyebrow-dot"></span>LIBRARY · 词库</p>
+        <h2 id="library-title" class="section-title">从中考到 GRE，一本接着一本</h2>
+        <p class="section-lead">主流考试词库全覆盖，选定目标即可开始；具体词库以 App 内当前版本为准。</p>
+      </div>
+      <div class="lib-grid">
+        <div class="lib-cell" tabindex="0"><span class="lib-code">CET-4</span><span class="lib-name">四级</span></div>
+        <div class="lib-cell" tabindex="0"><span class="lib-code">CET-6</span><span class="lib-name">六级</span></div>
+        <div class="lib-cell" tabindex="0"><span class="lib-code">PGT</span><span class="lib-name">考研英语</span></div>
+        <div class="lib-cell" tabindex="0"><span class="lib-code">TOEFL</span><span class="lib-name">托福</span></div>
+        <div class="lib-cell" tabindex="0"><span class="lib-code">IELTS</span><span class="lib-name">雅思</span></div>
+        <div class="lib-cell" tabindex="0"><span class="lib-code">GRE</span><span class="lib-name">GRE</span></div>
+        <div class="lib-cell" tabindex="0"><span class="lib-code">DEV</span><span class="lib-name">程序员英语</span></div>
+        <div class="lib-cell" tabindex="0"><span class="lib-code">ZK</span><span class="lib-name">中考</span></div>
+        <div class="lib-cell" tabindex="0"><span class="lib-code">GK</span><span class="lib-name">高考</span></div>
+        <div class="lib-cell" tabindex="0"><span class="lib-code">DAILY</span><span class="lib-name">日常积累</span></div>
+      </div>
+    </div>
+    <div class="word-marquee" aria-hidden="true">
+      <div class="word-track" id="word-track">
+        <span>abandon</span><span>eloquent</span><span>resilience</span><span>ephemeral</span><span>diligent</span><span>nuance</span><span>vivid</span><span>meticulous</span><span>serendipity</span><span>profound</span><span>candid</span><span>iterate</span><span>lucid</span><span>ubiquitous</span><span>tenacity</span><span>coherent</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why 墨典 -->
+  <section class="section why" id="why" aria-labelledby="why-title">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow"><span class="eyebrow-dot"></span>WHY&nbsp;墨典 · 为什么是它</p>
+        <h2 id="why-title" class="section-title">别人给你更多功能，<br>我们替你减去干扰</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-card" tabindex="0">
+          <div class="why-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></div>
+          <h3>零广告 · 零信息流</h3>
+          <p>没有开屏广告，没有推荐流，打开就是背单词，学完即走。</p>
+        </div>
+        <div class="why-card" tabindex="0">
+          <div class="why-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5 10 17l9-10"/></svg></div>
+          <h3>离线可用</h3>
+          <p>核心背诵与本地词典无需联网，通勤、旅途随时开背。</p>
+        </div>
+        <div class="why-card" tabindex="0">
+          <div class="why-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 5-3.5 7.5-7 9-3.5-1.5-7-4-7-9V6z"/></svg></div>
+          <h3>隐私优先</h3>
+          <p>数据以 iCloud 同步于你自己的账户，学习记录只属于你。</p>
+        </div>
+        <div class="why-card" tabindex="0">
+          <div class="why-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="13" height="16" rx="2"/><path d="M16 8h3a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-3"/><path d="M9 20v-3"/></svg></div>
+          <h3>iPhone × iPad 同步</h3>
+          <p>手机上学、平板上复习，进度通过 iCloud 无缝衔接。</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Learning Flow -->
-  <section class="section flow" id="flow" aria-labelledby="flow-title">
+  <!-- Brand quote (literary, replaces fake testimonials) -->
+  <section class="section creed" aria-label="品牌理念">
     <div class="container">
-      <h2 id="flow-title" class="section-title">学习流程</h2>
-      <p class="section-subtitle">四步完整学习路径，简单高效</p>
-      <div class="flow-steps">
-        <div class="flow-step">
-          <div class="flow-number" aria-hidden="true">1</div>
-          <h3 class="flow-title">选择目标</h3>
-          <p class="flow-desc">从多种考试词库中选择你的学习目标</p>
-        </div>
-        <div class="flow-step">
-          <div class="flow-number" aria-hidden="true">2</div>
-          <h3 class="flow-title">设立计划</h3>
-          <p class="flow-desc">根据时间安排制定每日学习计划</p>
-        </div>
-        <div class="flow-step">
-          <div class="flow-number" aria-hidden="true">3</div>
-          <h3 class="flow-title">执行任务</h3>
-          <p class="flow-desc">每天完成新单词学习任务</p>
-        </div>
-        <div class="flow-step">
-          <div class="flow-number" aria-hidden="true">4</div>
-          <h3 class="flow-title">复习任务</h3>
-          <p class="flow-desc">按艾宾浩斯节奏完成复习，巩固记忆</p>
-        </div>
-      </div>
+      <blockquote class="creed-quote">
+        <p>“合抱之木，生于毫末；<br>九层之台，起于累土。”</p>
+        <cite>每天一点，是墨典相信的学习方式</cite>
+      </blockquote>
     </div>
   </section>
 
   <!-- Audience -->
   <section class="section audience" id="audience" aria-labelledby="audience-title">
     <div class="container">
-      <h2 id="audience-title" class="section-title">适合哪些人</h2>
-      <p class="section-subtitle">不同学习目标，同一款高效工具</p>
+      <div class="section-head">
+        <p class="eyebrow"><span class="eyebrow-dot"></span>FOR&nbsp;YOU · 适合谁</p>
+        <h2 id="audience-title" class="section-title">不同的目标，同一套高效方法</h2>
+      </div>
       <div class="audience-grid">
-        <span class="audience-tag">📝 备考四六级</span>
-        <span class="audience-tag">🎓 考研英语</span>
-        <span class="audience-tag">🌍 托福 / 雅思</span>
-        <span class="audience-tag">🔬 GRE 备考</span>
-        <span class="audience-tag">📱 中考 / 高考</span>
-        <span class="audience-tag">💻 程序员英语</span>
-        <span class="audience-tag">📅 日常英语积累</span>
-        <span class="audience-tag">📖 长期坚持学习者</span>
+        <span class="audience-tag" tabindex="0">备考四六级</span>
+        <span class="audience-tag" tabindex="0">考研英语</span>
+        <span class="audience-tag" tabindex="0">托福 · 雅思</span>
+        <span class="audience-tag" tabindex="0">GRE 备考</span>
+        <span class="audience-tag" tabindex="0">中考 · 高考</span>
+        <span class="audience-tag" tabindex="0">程序员英语</span>
+        <span class="audience-tag" tabindex="0">日常积累</span>
+        <span class="audience-tag" tabindex="0">长期坚持者</span>
       </div>
     </div>
   </section>
 
-  <!-- Screenshots -->
-  <section class="section screenshots" id="screenshots" aria-labelledby="screenshots-title">
-    <div class="container">
-      <h2 id="screenshots-title" class="section-title">App 截图</h2>
-      <p class="section-subtitle">直观的界面设计，专注于高效背单词</p>
-      <div class="screenshots-grid" aria-label="App 界面截图展示">
-        <div class="screenshot-frame">
-          <img
-            src="./assets/images/screenshot-01.webp"
-            alt="墨典单词 - 海量词汇资源：涵盖四六级、考研、托福等主流考试词库"
-            loading="lazy"
-            width="626"
-            height="469"
-          >
-          <p class="screenshot-caption">海量词汇</p>
-        </div>
-        <div class="screenshot-frame">
-          <img
-            src="./assets/images/screenshot-02.jpg"
-            alt="墨典单词 - 分屏背诵支持：iPad 分屏模式下同时查词与阅读"
-            loading="lazy"
-            width="2732"
-            height="2048"
-          >
-          <p class="screenshot-caption">分屏背诵</p>
-        </div>
-        <div class="screenshot-frame">
-          <img
-            src="./assets/images/screenshot-03.jpg"
-            alt="墨典单词 - 多种记单词模式：灵活切换不同学习方式"
-            loading="lazy"
-            width="2732"
-            height="2048"
-          >
-          <p class="screenshot-caption">多种学习模式</p>
-        </div>
-        <div class="screenshot-frame">
-          <img
-            src="./assets/images/screenshot-04.png"
-            alt="墨典单词 - 护眼夜间模式：夜间舒适阅读，保护眼睛"
-            loading="lazy"
-            width="5464"
-            height="4096"
-          >
-          <p class="screenshot-caption">护眼夜间模式</p>
-        </div>
-        <div class="screenshot-frame">
-          <img
-            src="./assets/images/screenshot-05.jpg"
-            alt="墨典单词 - 图片取词识别：机器学习识别图片中的英文单词"
-            loading="lazy"
-            width="2732"
-            height="2048"
-          >
-          <p class="screenshot-caption">图片取词</p>
-        </div>
-        <div class="screenshot-frame">
-          <img
-            src="./assets/images/screenshot-06.jpg"
-            alt="墨典单词 - Google 翻译与真人发音：阅读模式下随时查词翻译"
-            loading="lazy"
-            width="2732"
-            height="2048"
-          >
-          <p class="screenshot-caption">阅读辅助</p>
-        </div>
-        <div class="screenshot-frame">
-          <img
-            src="./assets/images/screenshot-07.jpg"
-            alt="墨典单词 - 艾宾浩斯遗忘曲线：智能提醒，在最佳时机复习单词"
-            loading="lazy"
-            width="2732"
-            height="2048"
-          >
-          <p class="screenshot-caption">艾宾浩斯复习</p>
-        </div>
-        <div class="screenshot-frame">
-          <img
-            src="./assets/images/screenshot-08.jpg"
-            alt="墨典单词 - iCloud 多端同步：iPhone 与 iPad 学习数据自动同步"
-            loading="lazy"
-            width="2732"
-            height="2048"
-          >
-          <p class="screenshot-caption">iCloud 同步</p>
-        </div>
-        <div class="screenshot-frame">
-          <img
-            src="./assets/images/screenshot-09.jpg"
-            alt="墨典单词 - 多种记忆检测方式：测验、拼写、选择等多种检测模式"
-            loading="lazy"
-            width="2732"
-            height="2048"
-          >
-          <p class="screenshot-caption">记忆检测</p>
-        </div>
+  <!-- Final CTA -->
+  <section class="cta" aria-labelledby="cta-title">
+    <div class="cta-grain" aria-hidden="true"></div>
+    <div class="container cta-inner">
+      <div class="cta-mark" aria-hidden="true">
+        <img src="./assets/images/app-icon.png" alt="" width="72" height="72">
       </div>
+      <h2 id="cta-title" class="cta-title">今天记住的，别再还给时间</h2>
+      <p class="cta-desc">跟着遗忘曲线走，把每天的努力都留在脑子里。无广告、无打扰，在 App Store 获取墨典单词。</p>
+      <div class="cta-actions">
+        <a
+          href="https://apps.apple.com/cn/app/%E5%A2%A8%E5%85%B8%E5%8D%95%E8%AF%8D-%E9%AB%98%E6%95%88%E5%AD%A6%E8%8B%B1%E8%AF%AD%E9%94%81%E5%B1%8F%E8%83%8C%E5%8D%95%E8%AF%8D%E7%9A%84%E5%BF%85%E5%A4%87%E7%A5%9E%E5%99%A8/id1373544809"
+          class="btn btn-light btn-magnetic"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="在 App Store 下载墨典单词"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+          </svg>
+          App Store 下载
+        </a>
+        <button type="button" class="btn btn-ghost-light" id="share-btn" data-share-url="https://anneblair.github.io/modian-word-website/">
+          分享给还在死记硬背的朋友
+        </button>
+      </div>
+      <p class="buy-note buy-note-center">付费 App · <b>¥30</b> <span>不定期有优惠，以 App Store 为准</span></p>
+      <p class="cta-share-hint" id="share-hint" aria-live="polite"></p>
     </div>
   </section>
-
-  <!-- CTA -->
-  <section class="cta-section" aria-labelledby="cta-title">
-    <div class="container">
-      <h2 id="cta-title" class="cta-title">开始你的单词学习之旅</h2>
-      <p class="cta-desc">专注背单词，没有广告，没有干扰。现在就下载，按艾宾浩斯节奏高效记忆英语单词。</p>
-      <a
-        href="https://apps.apple.com/cn/app/%E5%A2%A8%E5%85%B8%E5%8D%95%E8%AF%8D-%E9%AB%98%E6%95%88%E5%AD%A6%E8%8B%B1%E8%AF%AD%E9%94%81%E5%B1%8F%E8%83%8C%E5%8D%95%E8%AF%8D%E7%9A%84%E5%BF%85%E5%A4%87%E7%A5%9E%E5%99%A8/id1373544809"
-        class="btn-download"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="在 App Store 下载墨典单词"
-        style="display:inline-flex;"
-      >
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-          <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
-        </svg>
-        在 App Store 下载
-      </a>
-    </div>
-  </section>
+  </main>
 
   <!-- Footer -->
   <footer class="site-footer" role="contentinfo">
     <div class="footer-inner">
       <div class="footer-top">
         <div class="footer-brand">
-          <div class="footer-brand-name">墨典单词</div>
-          <p class="footer-brand-desc">极简高效的英语背单词 App，按艾宾浩斯遗忘规律科学记忆，专注、纯粹、无广告。</p>
+          <a href="./" class="footer-logo">
+            <svg width="24" height="24" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+              <path d="M25 6c-6 1.5-11 6-14 12.5C10 21 9 24 8.5 26.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M25 6c-1 6-4.5 10.5-9.5 13.2-1.6.9-3.3 1.4-5 1.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M7 27h11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+            墨典单词
+          </a>
+          <p class="footer-brand-desc">依艾宾浩斯遗忘曲线的极简背单词 App。专注、纯粹、无广告——把力气花在对的时刻。</p>
         </div>
         <div class="footer-links-group">
-          <div class="footer-links-title">页面</div>
+          <div class="footer-links-title">导览</div>
+          <ul class="footer-links-list" role="list">
+            <li><a href="#science">记忆科学</a></li>
+            <li><a href="#features">核心功能</a></li>
+            <li><a href="#library">词库</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-group">
+          <div class="footer-links-title">帮助</div>
           <ul class="footer-links-list" role="list">
             <li><a href="./faq.html">常见问题</a></li>
             <li><a href="./support.html">用户支持</a></li>
@@ -358,25 +598,14 @@
         <div class="footer-links-group">
           <div class="footer-links-title">下载</div>
           <ul class="footer-links-list" role="list">
-            <li>
-              <a
-                href="https://apps.apple.com/cn/app/%E5%A2%A8%E5%85%B8%E5%8D%95%E8%AF%8D-%E9%AB%98%E6%95%88%E5%AD%A6%E8%8B%B1%E8%AF%AD%E9%94%81%E5%B1%8F%E8%83%8C%E5%8D%95%E8%AF%8D%E7%9A%84%E5%BF%85%E5%A4%87%E7%A5%9E%E5%99%A8/id1373544809"
-                target="_blank"
-                rel="noopener noreferrer"
-              >App Store</a>
-            </li>
+            <li><a href="https://apps.apple.com/cn/app/%E5%A2%A8%E5%85%B8%E5%8D%95%E8%AF%8D-%E9%AB%98%E6%95%88%E5%AD%A6%E8%8B%B1%E8%AF%AD%E9%94%81%E5%B1%8F%E8%83%8C%E5%8D%95%E8%AF%8D%E7%9A%84%E5%BF%85%E5%A4%87%E7%A5%9E%E5%99%A8/id1373544809" target="_blank" rel="noopener noreferrer">App Store</a></li>
             <li><a href="./support.html">联系我们</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <p class="footer-copyright">&copy; 2026 墨典单词. All rights reserved.</p>
+        <p class="footer-copyright">&copy; 2026 墨典单词 · All rights reserved.</p>
         <p class="footer-icp"><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">京ICP备2023026052号-3</a></p>
-        <div style="display:flex;gap:16px;font-size:0.85rem;">
-          <a href="./privacy.html" style="color:var(--color-text-light);">Privacy</a>
-          <a href="./support.html" style="color:var(--color-text-light);">Support</a>
-          <a href="./faq.html" style="color:var(--color-text-light);">FAQ</a>
-        </div>
       </div>
     </div>
   </footer>
