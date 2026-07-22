@@ -337,8 +337,12 @@ button { font-family: inherit; }
 /* secondary button must stay legible on the always-dark hero (both themes) */
 .hero .btn-ghost { color: rgba(238,240,250,0.82); border-color: rgba(255,255,255,0.28); }
 .hero .btn-ghost:hover { color: #fff; border-color: rgba(255,255,255,0.55); background: rgba(255,255,255,0.08); }
+.buy-note { margin-top: 16px; font-size: 0.82rem; color: rgba(224,228,245,0.62); }
+.buy-note b { color: #E0BC77; font-weight: 700; letter-spacing: 0.01em; }
+.buy-note span { color: rgba(224,228,245,0.42); }
+.buy-note-center { margin-top: 20px; }
 .hero-trust {
-  margin-top: 30px; display: flex; flex-wrap: wrap; gap: 10px 22px;
+  margin-top: 22px; display: flex; flex-wrap: wrap; gap: 10px 22px;
 }
 .hero-trust li {
   display: inline-flex; align-items: center; gap: 7px;
