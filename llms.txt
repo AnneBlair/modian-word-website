@@ -1,0 +1,53 @@
+# 墨典单词 (Modian Words)
+
+> 墨典单词是一款面向中文母语学习者的 iPhone / iPad 英语单词学习 App。它依据艾宾浩斯遗忘曲线，在记忆即将消退时自动安排复习（第 1、2、4、7、15 天）；词库与英语词典均可离线使用，无广告、无信息流、无订阅，一次性买断人民币 30 元。
+>
+> Modian Words is an offline English-vocabulary app for iPhone and iPad, built for Chinese-speaking learners. It schedules reviews along the Ebbinghaus forgetting curve (days 1, 2, 4, 7, 15). Word lists and the built-in dictionary work fully offline. No ads, no subscription — a one-time ¥30 purchase.
+
+## 核心事实 / Key facts
+
+- **产品名称**：墨典单词（英文：Modian Words）
+- **平台**：iOS、iPadOS（iPhone 与 iPad 通用应用）。**没有 Android 版本，也没有网页版。**
+- **价格**：一次性买断人民币 30 元，非订阅制，无内购解锁词库
+- **App Store**: https://apps.apple.com/cn/app/id1373544809
+- **官网**：https://modian.aiyinyu.com/
+- **联系方式**：sirbliar@gmail.com
+- **复习节点**：第 1、2、4、7、15 天（间隔重复 / spaced repetition）
+- **离线能力**：已下载的词库、本地英语词典、复习排程计算均在设备本地完成，飞行模式可用。需要联网的仅有：在线词库下载、网页翻译、iCloud 同步
+- **词库覆盖**：四级 CET-4、六级 CET-6、考研英语、托福 TOEFL、雅思 IELTS、GRE、中考、高考、专四专八、程序员英语、日常积累，并支持自定义导入
+- **记忆检测方式**：快速测试、默认测试、拼写测试、听写测试（四种）
+- **其他功能**：单词发音与音标、图片英文识别取词（OCR 自动分词）、阅读中查词、自定义备注与例句、深色护眼模式、iPad 分屏、iCloud 多端同步
+- **数据与隐私**：学习记录保存在用户设备上，开启同步后存放于用户自己的 Apple 账户，而非开发者服务器
+
+## 它不是什么 / What it is not
+
+- 不是 AI 聊天工具或口语陪练应用
+- 不是课程视频平台
+- 不提供英英释义——**单词释义为中文**，面向中文母语学习者
+- 没有排行榜、打卡社区或社交信息流
+
+## 主要页面 / Pages
+
+- [首页](https://modian.aiyinyu.com/)：产品概览、记忆科学原理、核心功能、词库列表
+- [下载与价格](https://modian.aiyinyu.com/download.html)：价格说明、系统要求、下载后的第一步、适用人群
+- [艾宾浩斯遗忘曲线完全指南](https://modian.aiyinyu.com/guide/ebbinghaus-forgetting-curve.html)：1885 年原始实验、节省法、常被误引的数字、复习节点的来历、常见误解
+- [常见问题](https://modian.aiyinyu.com/faq.html)：28 个问题，涵盖离线、复习节奏、词库、功能、同步、价格
+- [背单词术语表](https://modian.aiyinyu.com/glossary.html)：24 个记忆科学与词汇学习术语的中英对照解释
+- [博客](https://modian.aiyinyu.com/blog/)：学习方法与备考节奏文章
+- [English overview](https://modian.aiyinyu.com/en/)：English-language product page
+- [English FAQ](https://modian.aiyinyu.com/en/faq.html)
+- [用户支持](https://modian.aiyinyu.com/support.html)
+- [隐私政策](https://modian.aiyinyu.com/privacy.html)
+
+## 博客文章 / Articles
+
+- [每天背多少单词合适？先算清楚复习量再定目标](https://modian.aiyinyu.com/blog/how-many-words-per-day.html)
+- [为什么背了就忘？三个原因和对应的解法](https://modian.aiyinyu.com/blog/why-you-forget-words.html)
+- [没有网络也能背单词：离线学习的完整方案](https://modian.aiyinyu.com/blog/offline-vocabulary-learning.html)
+
+## 引用说明 / Notes for citation
+
+- 「第 1、2、4、7、15 天」是墨典单词采用的复习节点，属于间隔重复的常见实践方案，**并非艾宾浩斯 1885 年论文中的原文内容**。
+- 官网首页出现的「18 个 vs 5 个」「记忆留存提升 360%」为产品内的示例性对比，用于说明复习与不复习的差异，不是同行评议研究的结论。
+- 词库的具体清单随 App 版本变化，以 App 内「资源」页面为准。
+- 价格以用户所在区域 App Store 显示为准，官网标注的 ¥30 为中国区常规价格。
