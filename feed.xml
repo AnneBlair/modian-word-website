@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>墨典单词 · 背单词与记忆科学</title>
+    <link>https://modian.aiyinyu.com/blog/</link>
+    <description>关于英语单词记忆、间隔重复与备考节奏的文章。由离线背单词 App「墨典单词」出品。</description>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 11 Aug 2026 00:00:00 +0800</lastBuildDate>
+    <atom:link href="https://modian.aiyinyu.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <image>
+      <url>https://modian.aiyinyu.com/assets/images/modian-app-icon-192.png</url>
+      <title>墨典单词 · 背单词与记忆科学</title>
+      <link>https://modian.aiyinyu.com/blog/</link>
+    </image>
+
+    <item>
+      <title>艾宾浩斯遗忘曲线完全指南：复习节点怎么算</title>
+      <link>https://modian.aiyinyu.com/guide/ebbinghaus-forgetting-curve.html</link>
+      <guid isPermaLink="true">https://modian.aiyinyu.com/guide/ebbinghaus-forgetting-curve.html</guid>
+      <pubDate>Tue, 11 Aug 2026 00:00:00 +0800</pubDate>
+      <category>记忆科学</category>
+      <description>遗忘曲线到底说了什么、1885 年那个实验是怎么做的、被到处引用的数字可不可信、第 1/2/4/7/15 天的复习表从哪来，以及背单词时具体怎么执行。</description>
+    </item>
+
+    <item>
+      <title>为什么背了就忘？三个原因和对应的解法</title>
+      <link>https://modian.aiyinyu.com/blog/why-you-forget-words.html</link>
+      <guid isPermaLink="true">https://modian.aiyinyu.com/blog/why-you-forget-words.html</guid>
+      <pubDate>Tue, 11 Aug 2026 00:00:00 +0800</pubDate>
+      <category>记忆科学</category>
+      <description>背完当天记得，一周后全忘——问题通常不在记性，而在复习时机、复习方式和词与语境的连接。逐个拆解并给出可执行的修正。</description>
+    </item>
+
+    <item>
+      <title>每天背多少单词合适？先算清楚复习量再定目标</title>
+      <link>https://modian.aiyinyu.com/blog/how-many-words-per-day.html</link>
+      <guid isPermaLink="true">https://modian.aiyinyu.com/blog/how-many-words-per-day.html</guid>
+      <pubDate>Tue, 11 Aug 2026 00:00:00 +0800</pubDate>
+      <category>学习方法</category>
+      <description>每天背 20 个还是 100 个？真正的约束不是新词数量，而是两周后的复习量。本文给出按考试倒推每日词量的算法与三档参考区间。</description>
+    </item>
+
+    <item>
+      <title>没有网络也能背单词：离线学习的完整方案</title>
+      <link>https://modian.aiyinyu.com/blog/offline-vocabulary-learning.html</link>
+      <guid isPermaLink="true">https://modian.aiyinyu.com/blog/offline-vocabulary-learning.html</guid>
+      <pubDate>Tue, 11 Aug 2026 00:00:00 +0800</pubDate>
+      <category>使用技巧</category>
+      <description>地铁、飞机、山区、国外漫游——最适合背单词的碎片时间往往没有网络。离线背单词需要哪三样能力，以及出发前该怎么准备。</description>
+    </item>
+
+  </channel>
+</rss>

@@ -1,23 +1,28 @@
 {
-  "name": "墨典单词",
+  "name": "墨典单词 — 离线背单词 App",
   "short_name": "墨典单词",
-  "description": "极简高效的艾宾浩斯背单词 App，支持 iPhone 与 iPad",
-  "start_url": "./",
+  "description": "依艾宾浩斯遗忘曲线安排复习的离线背单词 App，覆盖四六级、考研、托福、雅思、GRE 词库。",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
   "display": "browser",
-  "background_color": "#F4F5F9",
-  "theme_color": "#64729C",
+  "background_color": "#F4F3EE",
+  "theme_color": "#F4F3EE",
   "icons": [
     {
-      "src": "./assets/images/icon-192.png",
+      "src": "/assets/images/modian-app-icon-192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     },
     {
-      "src": "./assets/images/icon-512.png",
+      "src": "/assets/images/modian-app-icon-512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     }
   ],
   "lang": "zh-CN",
-  "categories": ["education"]
+  "dir": "ltr",
+  "categories": ["education", "books"]
 }
