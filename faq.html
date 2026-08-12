@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>常见问题 - 墨典单词｜离线背单词 App 使用答疑</title>
-  <meta name="description" content="墨典单词常见问题：离线能不能用、艾宾浩斯复习节点怎么排、支持哪些考试词库、多少钱、iPad 与 iCloud 同步、漏掉复习怎么办等真实问题的解答。">
+  <meta name="description" content="墨典单词常见问题：离线能不能用、锁屏背单词怎么开、复习节点怎么排、支持哪些考试词库、导入自己的 TXT 词表、价格与 iCloud 同步等 32 个真实问题的解答。">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
   <meta name="color-scheme" content="light dark">
   <link rel="canonical" href="https://modian.aiyinyu.com/faq.html">
@@ -194,6 +194,26 @@
           },
           {
             "@type": "Question",
+            "name": "自定义导入的词库可以按原顺序背吗？",
+            "acceptedAnswer": { "@type": "Answer", "text": "可以。自定义词库在设置背诵计划时，点击「切换记忆方式」即可在乱序（默认）与正序之间切换。正序会严格按照你 TXT 文件里的原始顺序来背，适合教材配套词表、按章节整理的词表，或已按词频排好序的表；其余情况建议保持乱序，可以切断位置线索。" }
+          },
+          {
+            "@type": "Question",
+            "name": "计划天数设定后还能修改吗？",
+            "acceptedAnswer": { "@type": "Answer", "text": "不能。设置背诵计划时填写的天数在设定后不可修改，页面上也有对应提示。所以填之前先算一下：词库总量除以你打算每天背的数量。例如 1462 个词、每天 30 个就是约 49 天。拿不准时宁可把天数填长一点——每天少背几个总能坚持，定得太紧则容易在第二周被复习量压垮。" }
+          },
+          {
+            "@type": "Question",
+            "name": "锁屏背单词怎么用？",
+            "acceptedAnswer": { "@type": "Answer", "text": "在任意单词列表页面点击播放按钮进入播放列表，随便点一个单词开始播放；此时把 App 切到后台或直接锁屏，单词就会以播放器的形式出现在锁屏界面，跟着设定的节奏自动往下走。锁屏上显示哪些内容（单词、释义或留空）以及切换速度、单词循环次数，都可以在播放设置里自定义；耳机线控与控制中心也能直接切换上一个或下一个。" }
+          },
+          {
+            "@type": "Question",
+            "name": "可以把单词本导出吗？",
+            "acceptedAnswer": { "@type": "Answer", "text": "可以。在单词本页面点击右上角的「…」菜单，提供两种导出方式：导出为 PDF（适合打印出来做纸质默写）和存入本地 txt。存成 TXT 后还能在自定义导入里为这批词单独建立一个背诵计划，这是让机器学习取词收集的生词真正进入复习排程的标准做法。" }
+          },
+          {
+            "@type": "Question",
             "name": "有深色模式吗？",
             "acceptedAnswer": { "@type": "Answer", "text": "有。墨典单词提供深色护眼模式，夜间或弱光环境下降低屏幕亮度刺激，跟随系统外观设置。" }
           },
@@ -252,7 +272,7 @@
         <li><a href="./#features">核心功能</a></li>
         <li><a href="./guide/ebbinghaus-forgetting-curve.html">遗忘曲线指南</a></li>
         <li><a href="./faq.html" aria-current="page">常见问题</a></li>
-        <li><a href="./support.html">支持</a></li>
+        <li><a href="./help/">使用教程</a></li>
         <li class="nav-tools">
           <a href="./en/faq.html" class="nav-lang" hreflang="en" lang="en" title="English version">EN</a>
           <button id="theme-toggle" class="theme-toggle" type="button" aria-label="切换深色/浅色模式" title="切换主题">
@@ -513,7 +533,7 @@
               </button>
             </h3>
             <div class="faq-answer" id="faq-15" role="region" aria-labelledby="faq-btn-15">
-              可以。资源页面提供自定义导入入口，你可以把自己整理的生词表导入成词库，再按同样的艾宾浩斯节奏来背。阅读或图片取词时遇到的生词也能直接收进生词本。
+              可以。资源页面提供自定义导入入口，你可以把自己整理的生词表导入成词库，再按同样的艾宾浩斯节奏来背。阅读或图片取词时遇到的生词也能直接收进生词本。支持三种方式：<strong>从其他应用分享 TXT、Mac 隔空投送、以及直接导入剪贴板里的单词</strong>。详细步骤见<a href="./help/import-txt-wordlist.html">导入 TXT 词库教程</a>。
             </div>
           </div>
 
@@ -538,6 +558,30 @@
             </h3>
             <div class="faq-answer" id="faq-17" role="region" aria-labelledby="faq-btn-17">
               选 App 内的考研英语词库即可，大纲词汇约 5500 词。按<strong>每天 40 词</strong>推算，走完一轮约需 5 个月，加上复习尾巴，建议<strong>至少提前 6 个月</strong>开始，给后期留出真题阶段的重复空间。时间不足时，优先保证高频词的复习不断档，而不是追求过完整本。
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <h3 class="faq-q-heading">
+              <button class="faq-question" aria-expanded="false" aria-controls="faq-29" id="faq-btn-29">
+                自定义导入的词库可以按原顺序背吗？
+                <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+            </h3>
+            <div class="faq-answer" id="faq-29" role="region" aria-labelledby="faq-btn-29">
+              可以。自定义词库在设置背诵计划时，点击「切换记忆方式」即可在<strong>乱序</strong>（默认）与<strong>正序</strong>之间切换。正序会严格按照你 TXT 文件里的原始顺序来背，适合教材配套词表、按章节整理的词表，或已按词频排好序的表；其余情况建议保持乱序，可以切断位置线索。
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <h3 class="faq-q-heading">
+              <button class="faq-question" aria-expanded="false" aria-controls="faq-30" id="faq-btn-30">
+                计划天数设定后还能修改吗？
+                <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+            </h3>
+            <div class="faq-answer" id="faq-30" role="region" aria-labelledby="faq-btn-30">
+              <strong>不能。</strong>设置背诵计划时填写的天数在设定后不可修改，页面上也有对应提示。所以填之前先算一下：词库总量 ÷ 你打算每天背的数量。例如 1462 个词、每天 30 个就是约 49 天。拿不准时<strong>宁可把天数填长一点</strong>——每天少背几个总能坚持，定得太紧则容易在第二周被复习量压垮。
             </div>
           </div>
 
@@ -581,7 +625,7 @@
               </button>
             </h3>
             <div class="faq-answer" id="faq-20" role="region" aria-labelledby="faq-btn-20">
-              对着书本、讲义、路牌或屏幕拍一张照片，App 会识别其中的英文并<strong>自动分词</strong>，逐词给出音标与释义，还会与你已掌握的词库比对去重。挑出真正陌生的词，一键加入生词本即可进入正常的复习排程。
+              对着书本、讲义、路牌或屏幕拍一张照片，App 会识别其中的英文并<strong>自动分词</strong>，逐词给出音标与释义，还会与你已掌握的词库比对去重。挑出真正陌生的词，一键加入生词本即可进入正常的复习排程。入口在单词本右上角的「…」菜单里，详见<a href="./help/ocr-word-capture.html">机器学习取词教程</a>。
             </div>
           </div>
 
@@ -618,6 +662,30 @@
             </h3>
             <div class="faq-answer" id="faq-23" role="region" aria-labelledby="faq-btn-23">
               有。墨典单词提供深色护眼模式，夜间或弱光环境下降低屏幕亮度刺激，跟随系统外观设置。
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <h3 class="faq-q-heading">
+              <button class="faq-question" aria-expanded="false" aria-controls="faq-31" id="faq-btn-31">
+                锁屏背单词怎么用？
+                <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+            </h3>
+            <div class="faq-answer" id="faq-31" role="region" aria-labelledby="faq-btn-31">
+              在任意单词列表页面点击<strong>播放按钮</strong>进入播放列表，随便点一个单词开始播放；此时把 App 切到后台或直接锁屏，单词就会<strong>以播放器的形式出现在锁屏界面</strong>，跟着设定的节奏自动往下走。锁屏上显示哪些内容（单词、释义或留空）以及切换速度、单词循环次数，都可以在播放设置里自定义；耳机线控与控制中心也能直接切换上一个 / 下一个。完整步骤见<a href="./help/lock-screen-vocabulary.html">锁屏背单词教程</a>。
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <h3 class="faq-q-heading">
+              <button class="faq-question" aria-expanded="false" aria-controls="faq-32" id="faq-btn-32">
+                可以把单词本导出吗？
+                <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+            </h3>
+            <div class="faq-answer" id="faq-32" role="region" aria-labelledby="faq-btn-32">
+              可以。在单词本页面点击右上角的<strong>「…」</strong>菜单，提供两种导出方式：<strong>导出为 PDF</strong>（适合打印出来做纸质默写）和<strong>存入本地 txt</strong>。存成 TXT 后还能在「自定义导入」里为这批词单独建立一个背诵计划——这是让机器学习取词收集的生词真正进入复习排程的标准做法。
             </div>
           </div>
 
@@ -747,6 +815,7 @@
           <div class="footer-links-title">学习资源</div>
           <ul class="footer-links-list" role="list">
             <li><a href="./guide/ebbinghaus-forgetting-curve.html">艾宾浩斯遗忘曲线指南</a></li>
+            <li><a href="./help/">使用教程</a></li>
             <li><a href="./glossary.html">背单词术语表</a></li>
             <li><a href="./blog/">学习方法博客</a></li>
             <li><a href="./feed.xml">RSS 订阅</a></li>

@@ -14,8 +14,8 @@
 | 维度 | 审计前 | 审计后 | 状态 |
 |---|---|---|---|
 | Canonical / OG / sitemap 域名 | ❌ 全部指向 github.io | ✅ 全部指向 modian.aiyinyu.com | 已修复 |
-| 页面总数（可索引） | 4 | 13 | 已扩充 |
-| 结构化数据类型 | 1（MobileApplication） | 10（见 schema.md） | 已补齐 |
+| 页面总数（可索引） | 4 | 17 | 已扩充 |
+| 结构化数据类型 | 1（MobileApplication） | 15（见 schema.md） | 已补齐 |
 | FAQ 结构化数据 | ❌ 无 | ✅ FAQPage（中英各一） | 已补齐 |
 | H2/H3 层级 | ❌ FAQ 页只有 1 个 H1，问题不是标题 | ✅ 全站层级合规，无跳级 | 已修复 |
 | 图片总量 | 4.72 MB | 1.31 MB | −72% |
@@ -66,13 +66,17 @@ https://anneblair.github.io/modian-word-website/
 ├── /download.html                       下载与价格
 ├── /guide/ebbinghaus-forgetting-curve.html   支柱长文
 ├── /glossary.html                       术语表（24 词条）
-├── /faq.html                            常见问题（28 问，7 组）
+├── /faq.html                            常见问题（32 问，7 组）
 ├── /blog/                               内容中心
 │   ├── how-many-words-per-day.html
 │   ├── why-you-forget-words.html
 │   └── offline-vocabulary-learning.html
 ├── /en/                                 English overview
 │   └── /en/faq.html                     English FAQ
+├── /help/                               帮助中心（图文教程）
+│   ├── lock-screen-vocabulary.html
+│   ├── import-txt-wordlist.html
+│   └── ocr-word-capture.html
 ├── /support.html
 ├── /privacy.html
 ├── /404.html                            noindex
@@ -153,6 +157,8 @@ checked 14 HTML pages
 | 定位要点 | 审计前站内覆盖 | 处理 |
 |---|---|---|
 | 离线词典 / 无网络可学习 | 仅 1 张卡片 + 1 个 trust badge，正文未展开 | ✅ Hero 正文、功能卡改写、FAQ 独立分组（3 问）、专文一篇 |
+| **锁屏背单词** | ❌ **完全没有提及**——尽管它写在 App 名称里 | ✅ 首页功能卡 + 专门教程页 + FAQ Q31 + `featureList` + `llms.txt` |
+| 自定义 TXT 导入 / 正序乱序 | 仅 FAQ 一句带过 | ✅ 专门教程页 + FAQ Q15/Q29/Q30 |
 | 发音 | ❌ 完全没有提及 | ✅ 新增功能卡「发音与四种记忆检测」、FAQ 2 问、术语表音标词条 |
 | 真题词汇 / 考试词库 | 有词库网格，但无文字说明 | ✅ FAQ 词库分组（4 问）、术语表「考试词库」词条、下载页说明 |
 | 长期记忆 | 有曲线可视化，无文字论证 | ✅ 支柱长文 + 3 篇博客 |
@@ -197,7 +203,7 @@ checked 14 HTML pages
 | WebSite | ✅ 新增 | 首页 |
 | WebPage | ✅ 新增 | 首页、下载、隐私 |
 | SoftwareApplication + MobileApplication | ✅ 重写（含 featureList、screenshot、offers） | 首页 |
-| FAQPage | ✅ 新增 | `/faq.html`（28 问）、`/en/faq.html`（12 问） |
+| FAQPage | ✅ 新增 | `/faq.html`（32 问）、`/en/faq.html`（12 问） |
 | BreadcrumbList | ✅ 新增 | 全部内页 |
 | Article | ✅ 新增 | 支柱长文 |
 | BlogPosting | ✅ 新增 | 3 篇博客 |
@@ -289,7 +295,7 @@ checked 14 HTML pages
 | 文件 | 变更摘要 |
 |---|---|
 | `index.html` | 域名修正、Title/Description 重写、hreflang、`@graph` 结构化数据、`<picture>` 响应式图片、新增功能卡与内链段落、导航与页脚重构、Smart App Banner |
-| `faq.html` | 完全重写：9 问 → 28 问分 7 组、H2/H3 语义化、FAQPage 结构化数据、面包屑、相关阅读 |
+| `faq.html` | 完全重写：9 问 → 32 问分 7 组、H2/H3 语义化、FAQPage 结构化数据、面包屑、相关阅读 |
 | `support.html` | 域名修正、hreflang、ContactPage + Breadcrumb 结构化数据、面包屑、导航/页脚重构、ARIA 修正 |
 | `privacy.html` | 同上（WebPage + Breadcrumb） |
 | `robots.txt` | 重写：主流搜索引擎 + AI 爬虫显式放行，修正 Sitemap 地址 |
@@ -315,11 +321,27 @@ checked 14 HTML pages
 | `feed.xml` | RSS 2.0 |
 | `llms.txt` | AI 检索事实清单 |
 | `assets/images/modian-*.webp / .jpg / .png` | 27 个优化后的图片资源 |
+| `help/index.html` 及 3 篇教程 | 帮助中心：锁屏背单词、TXT 导入、机器学习取词 |
+| `assets/images/help/*` | 15 个优化后的教程截图资源（3.76 MB → 1.42 MB） |
 | `docs/seo/*.md` | 本套文档 |
 
 ### 删除的文件
 
 `assets/images/screenshot-0[1-9].*`、`app-icon.png`、`icon-192.png`、`icon-512.png` —— 已被语义化命名的优化版本取代。**注意**：旧图片 URL 将返回 404。因站点为新站、图片未进入 Google 图片索引，此风险可忽略；若日后发现有外部站点热链旧文件名，可再补一份同名副本。
+
+---
+
+## 补记：2026-08-12 的一次补充
+
+产品方提供了 5 张标注版教程截图，并确认**锁屏背单词功能存在**。由此产生两点：
+
+1. **一个被忽略的关键词缺口被补上。**「锁屏背单词」写在 App 名称（权重最高的 ASO 字段）里，官网却零覆盖。这是一次很典型的疏漏——**产品有、官网没写**，等于白送一个竞争极低的词族。已通过首页功能卡、专门教程页、FAQ 与结构化数据补齐。
+   > **可复用的排查方法**：定期把 App Store 描述与官网内容逐条对照，找出「App 里有但官网没写」的功能。这类缺口的获取成本最低。
+
+2. **教程截图的处理方式。** 这些图带红框红字标注，视觉语言与官网克制的排版风格冲突。解决办法不是改官网风格，而是**给它们一个正确的容身之处**——帮助中心。在文档语境里，标注截图恰恰是读者预期的形态。
+   同时采用**文字优先**原则：截图里的标注文字是烧进像素的，Google 与 AI 读不到，因此每一步都写成 HTML 文本，截图只作为佐证。这同时解决了风格与 SEO 两个问题。
+
+   ⚠️ **遗留问题**：这批截图来自 2019–2020 年（iPhone X 时代界面，图内可见旧日期，且中英文界面混杂）。建议后续用当前版本重拍，见 `action-plan.md` P2-12。
 
 ---
 

@@ -24,11 +24,11 @@ Organization  (#organization) ──┬── publisher of ── WebSite (#webs
                                 ├── publisher of ── DefinedTermSet
                                 └── author/publisher of ── SoftwareApplication (#app)
 
-WebSite (#website) ──── isPartOf ──── 每个 WebPage / FAQPage / Blog
+WebSite (#website) ──── isPartOf ──── 每个 WebPage / FAQPage / Blog / TechArticle
 
 SoftwareApplication + MobileApplication (#app)
    ├── offers ── Offer (¥30 CNY, InStock)
-   ├── featureList[9]
+   ├── featureList[12]
    ├── screenshot[3]
    └── 被各页 about 引用
 
@@ -45,17 +45,19 @@ BreadcrumbList  每个内页一份
 | `WebSite` | `/` | `#website` | 全站根实体 |
 | `WebPage` | `/`、`/download.html`、`/privacy.html`、`/en/` | `#webpage` | 带 `primaryImageOfPage` |
 | `SoftwareApplication` + `MobileApplication` | `/` | `#app` | 双类型数组，含 `featureList`、`offers`、`screenshot`、`isAccessibleForFree: false` |
-| `FAQPage` | `/faq.html` | `#faq` | 28 组 Question / Answer |
+| `FAQPage` | `/faq.html` | `#faq` | 32 组 Question / Answer |
 | `FAQPage` | `/en/faq.html` | `#faq` | 12 组，`inLanguage: en` |
-| `BreadcrumbList` | 全部内页（10 页） | `#breadcrumb` | 2–3 级 |
+| `BreadcrumbList` | 全部内页（14 页） | `#breadcrumb` | 2–3 级 |
 | `Article` | `/guide/ebbinghaus-forgetting-curve.html` | `#article` | 含 `about` / `mentions` → 维基百科实体 |
 | `BlogPosting` | 3 篇博客 | `#article` | `articleSection`、`isPartOf` → Blog |
 | `Blog` | `/blog/` | `#blog` | |
 | `ItemList` | `/blog/` | `#list` | 文章列表，降序 |
 | `DefinedTermSet` + `DefinedTerm` | `/glossary.html` | `#glossary` + 24 个词条 `@id` | 每个词条有独立锚点 |
 | `ContactPage` | `/support.html` | `#webpage` | |
+| `CollectionPage` | `/help/` | `#webpage` | 帮助中心索引 |
+| `TechArticle` | 3 篇帮助教程 | `#article` | 操作类文档用 TechArticle 比 Article 更准确 |
 
-**类型总数：13**（原为 1）
+**类型总数：15**（原为 1）
 
 ---
 
@@ -80,7 +82,7 @@ BreadcrumbList  每个内页一份
       "isAccessibleForFree": false,
       "offers": { "@type": "Offer", "price": "30", "priceCurrency": "CNY",
                   "availability": "https://schema.org/InStock" },
-      "featureList": [ … 9 项 … ] }
+      "featureList": [ … 12 项 … ] }
   ]
 }
 ```
@@ -184,7 +186,7 @@ Google 已于 2023 年基本停止展示 HowTo 富媒体结果（桌面端也已
 
 ### 自动校验（已执行）
 
-本次已用脚本校验全部 14 个 HTML 页面的 JSON-LD：
+本次已用脚本校验全部 18 个 HTML 页面的 JSON-LD：
 
 ```
 ✅ 所有 JSON-LD 区块均为合法 JSON（无语法错误）
@@ -202,7 +204,7 @@ Google 已于 2023 年基本停止展示 HowTo 富媒体结果（桌面端也已
 | Google Search Console → 增强功能 | GSC 后台 | 上线 1–2 周后看实际识别情况与错误报告 |
 | Bing Webmaster Tools → 站点扫描 | Bing 后台 | Bing 对 FAQPage 的识别 |
 
-**建议顺序**：先用富媒体结果测试逐页跑一遍（13 个 URL），修完警告再提交 sitemap。
+**建议顺序**：先用富媒体结果测试逐页跑一遍（17 个可索引 URL），修完警告再提交 sitemap。
 
 ---
 
@@ -212,4 +214,6 @@ Google 已于 2023 年基本停止展示 HowTo 富媒体结果（桌面端也已
 2. **价格变动**时同步更新 `#app` 节点的 `offers.price` 与下载页可见文案——两者不一致会触发 Google 的价格不匹配警告。
 3. **`@id` 一旦确定不要修改**，它是实体的稳定标识；改了等于换了一个实体。
 4. **新增术语**时同步更新 `DefinedTermSet.hasDefinedTerm` 数组与页面锚点。
-5. 每次结构化数据改动后，重跑一次 JSON 合法性检查（可复用本次的校验脚本逻辑）。
+5. **新增帮助教程**用 `TechArticle`（不是 `Article`），并加入 `/help/` 的 `ItemList` 与 `sitemap.xml`。
+6. **新增 App 功能**时，同步更新三处：首页 `#app` 的 `featureList`、`llms.txt` 的核心事实、以及 FAQ——三者不一致会削弱实体可信度。
+7. 每次结构化数据改动后，重跑一次 JSON 合法性检查（可复用本次的校验脚本逻辑）。

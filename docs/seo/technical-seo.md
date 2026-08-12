@@ -13,7 +13,7 @@
 | 问题 | 修复 |
 |---|---|
 | 全站 canonical / og:url / sitemap / robots 指向 `anneblair.github.io/modian-word-website/`，而实际域名是 `modian.aiyinyu.com` | 全部替换为正式域名 |
-| sitemap 只有 4 条 URL，`lastmod` 停留在 2026-05-01 | 重写为 13 条 + 更新日期 + hreflang 声明 |
+| sitemap 只有 4 条 URL，`lastmod` 停留在 2026-05-01 | 重写为 17 条 + 更新日期 + hreflang 声明 |
 | robots.txt 的 Sitemap 行指向错误域名 | 修正 |
 
 **为什么这是 P0**：canonical 指向一个 301 跳转的 URL，等于向 Google 声明「正式版本在别处」。Search Console 会把这些页面归入「替代网页（有适当的规范标记）」而不予索引。在修复前，这个站几乎不可能获得任何自然流量。
@@ -32,7 +32,7 @@
 
 | 页面 | robots meta |
 |---|---|
-| 全部内容页（13 个） | `index, follow, max-image-preview:large, max-snippet:-1` |
+| 全部内容页（17 个） | `index, follow, max-image-preview:large, max-snippet:-1` |
 | `/404.html` | `noindex, follow` |
 
 `max-image-preview:large` 允许 Google 在搜索结果中展示大图预览；`max-snippet:-1` 解除摘要长度限制——两者都对 AI 摘要与富摘要有利，且没有副作用。
@@ -40,7 +40,7 @@
 ### 1.4 校验结果
 
 ```
-checked 14 HTML pages
+checked 18 HTML pages
 ✅ 每页 canonical 自指且与实际 URL 一致
 ✅ 0 处死链（全部内链可解析到实际文件）
 ✅ sitemap 中每条 URL 都有对应文件
@@ -109,7 +109,8 @@ checked 14 HTML pages
 
 | 指标 | 优化前 | 优化后 |
 |---|---|---|
-| `assets/images/` 总量 | 4.72 MB | **1.31 MB**（−72%） |
+| `assets/images/` 总量（App 截图） | 4.72 MB | **1.31 MB**（−72%） |
+| `assets/images/help/`（教程截图） | 3.76 MB 原图 | **1.42 MB**（960 / 1920 WebP + 1280 JPEG） |
 | 移动端首页实际图片传输 | ~4 MB | **~100 KB**（8 张 640w WebP，且懒加载） |
 | App 图标（72px 位） | 424 KB | 16 KB |
 | OG 图片 | 410 KB / 2732×2048（比例 4:3，不符合 1.91:1） | 59 KB / 1200×630 |
@@ -164,7 +165,7 @@ checked 14 HTML pages
 | 体积 | 12 KB，单文件，无框架 |
 | 位置 | `</body>` 前，非阻塞 |
 | 主题防闪烁脚本 | `<head>` 内联，必要且正确 |
-| 错误 | 实测 8 个页面，**0 个控制台错误、0 个页面异常** |
+| 错误 | 实测 12 个页面，**0 个控制台错误、0 个页面异常** |
 | 降级 | `IntersectionObserver` 不可用时有回退路径 |
 
 **建议**：给 `<script src="./assets/js/main.js">` 加 `defer`。当前它已在 body 末尾，效果接近，但加上 `defer` 语义更明确，且允许日后把脚本移到 `<head>` 而不改变行为。
@@ -203,7 +204,7 @@ checked 14 HTML pages
    - 可直接从 GSC 导入
    - 提交 sitemap
 
-3. **富媒体结果测试**：逐个跑 13 个 URL
+3. **富媒体结果测试**：逐个跑 17 个可索引 URL
 
 4. **PageSpeed Insights**：跑首页 + 支柱长文，记录基线（移动端与桌面端）
 

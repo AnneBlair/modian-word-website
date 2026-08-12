@@ -1130,3 +1130,93 @@ button { font-family: inherit; }
 .faq-answer ul { list-style: disc; padding-left: 22px; margin-top: 8px; }
 .faq-answer li + li { margin-top: 6px; }
 .faq-answer li::marker { color: var(--accent-gold); }
+
+/* ============================================================
+   HELP CENTER — annotated tutorial screenshots
+   These are hand-annotated App screenshots (red arrows, marker text).
+   They are deliberately framed as *documentation figures* rather than
+   product imagery, so the marketing pages keep their own visual language.
+   ============================================================ */
+.tutorial-shot {
+  margin: 2em 0;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 14px 14px 10px;
+}
+.tutorial-shot > a {
+  display: block; position: relative;
+  border-radius: var(--radius-sm); overflow: hidden;
+  background: #fff; /* screenshots carry a light background of their own */
+  border: 1px solid var(--line);
+  text-decoration: none;
+}
+.tutorial-shot img { width: 100%; height: auto; display: block; }
+.tutorial-shot > a::after {
+  content: "点击查看大图";
+  position: absolute; right: 10px; bottom: 10px;
+  padding: 5px 11px; border-radius: var(--radius-full);
+  background: rgba(15, 17, 24, 0.72); color: #fff;
+  font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.04em;
+  opacity: 0; transition: opacity var(--t-fast);
+  backdrop-filter: blur(6px); pointer-events: none;
+}
+.tutorial-shot > a:hover::after,
+.tutorial-shot > a:focus-visible::after { opacity: 1; }
+.tutorial-shot figcaption {
+  display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap;
+  margin-top: 12px; padding: 0 4px;
+  font-size: 0.85rem; line-height: 1.6; color: var(--ink-faint); text-align: left;
+}
+.tutorial-shot figcaption b {
+  flex: none;
+  font-family: var(--font-mono); font-size: 0.64rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--accent-gold);
+  border: 1px solid color-mix(in srgb, var(--accent-gold) 34%, transparent);
+  border-radius: var(--radius-full); padding: 3px 9px;
+}
+@media (max-width: 620px) {
+  .tutorial-shot { padding: 10px 10px 8px; margin-left: -6px; margin-right: -6px; }
+  .tutorial-shot > a::after { opacity: 1; }
+}
+
+/* Step list used across help articles.
+   Needs to out-specify `.prose ol { list-style: decimal }`, otherwise the
+   native marker renders alongside the numbered badge. */
+.steps,
+.prose ol.steps { counter-reset: step; list-style: none; padding-left: 0; }
+.steps > li {
+  counter-increment: step; position: relative;
+  padding-left: 46px; margin-top: 22px;
+}
+.steps > li::before {
+  content: counter(step); position: absolute; left: 0; top: -2px;
+  width: 30px; height: 30px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--brand-soft); color: var(--brand-strong);
+  border: 1px solid color-mix(in srgb, var(--brand) 30%, transparent);
+  font-family: var(--font-mono); font-size: 0.8rem; font-weight: 700;
+}
+.steps > li > strong:first-child { display: block; color: var(--ink); margin-bottom: 2px; }
+
+/* Help index cards */
+.help-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px; max-width: 800px; margin: 0 auto;
+}
+.help-card {
+  display: block; background: var(--surface); border: 1px solid var(--line);
+  border-radius: var(--radius-md); padding: 24px 26px;
+  transition: transform var(--t) var(--ease), box-shadow var(--t), border-color var(--t);
+}
+.help-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: var(--line-strong); }
+.help-card h2 {
+  font-family: var(--font-serif); font-size: 1.1rem; font-weight: 700;
+  color: var(--ink); margin: 10px 0 8px;
+}
+.help-card p { font-size: 0.9rem; line-height: 1.7; color: var(--ink-soft); margin: 0; }
+.help-card .help-kicker {
+  font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--ink-faint);
+}

@@ -19,6 +19,11 @@
   404.html                      # 自定义 404（noindex）
   guide/
     ebbinghaus-forgetting-curve.html   # 支柱长文：艾宾浩斯遗忘曲线完全指南
+  help/
+    index.html                  # 帮助中心（图文教程）
+    lock-screen-vocabulary.html
+    import-txt-wordlist.html
+    ocr-word-capture.html
   blog/
     index.html                  # 内容中心
     how-many-words-per-day.html
@@ -68,7 +73,8 @@
 | **支持邮箱** | ✅ 已配置 | 已配置真实邮箱（内容已脱敏，见 support.html） |
 | **自定义域名** | ✅ modian.aiyinyu.com | 全站 `canonical`、`sitemap.xml`、`robots.txt` 已统一使用该域名 |
 | **App Store 评分** | ⏳ 待补 | 拿到真实评分后补 `AggregateRating` 结构化数据，见 `docs/seo/schema.md` |
-| **锁屏功能** | ⏳ 待确认 | App 名称提到「锁屏背单词」但官网无对应说明，见 `docs/seo/action-plan.md` P0-3 |
+| **锁屏功能** | ✅ 已确认存在 | 首页功能卡 + `help/lock-screen-vocabulary.html` 教程页 |
+| **教程截图** | ⚠️ 偏旧 | 现有截图为 2019–2020 年界面，建议用当前版本重拍，见 `docs/seo/action-plan.md` P2-12 |
 | **版权年份** | 2026 | 每年更新页脚版权年份 |
 
 ## 📱 App 信息

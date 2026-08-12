@@ -44,6 +44,34 @@
   </url>
 
   <url>
+    <loc>https://modian.aiyinyu.com/help/</loc>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://modian.aiyinyu.com/help/lock-screen-vocabulary.html</loc>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://modian.aiyinyu.com/help/import-txt-wordlist.html</loc>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://modian.aiyinyu.com/help/ocr-word-capture.html</loc>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://modian.aiyinyu.com/blog/</loc>
     <lastmod>2026-08-11</lastmod>
     <changefreq>weekly</changefreq>
